@@ -1,0 +1,282 @@
+.navbar-nav{
+    padding: 1% 10%;
+    padding-bottom: 0%;
+   
+}
+#myNavbar.scrolled {
+    background-color: white;
+    box-shadow: 5px 0 10px 0 #ccc;
+    padding: 0.5% 0%;
+  }
+  .boxboy{
+    box-shadow: 5px 0 10px 0 #ccc;
+  }
+  
+  #myNavbar.scrolled .navbar-brand,
+  #myNavbar.scrolled .nav-link {
+    color: black;
+  }
+.navbar-brand{
+    padding: 1% 5%;
+    padding-bottom: 0%;
+    color: white;
+    font-family: "Montserrat";
+    letter-spacing: 5px;
+    font-family: 'Clash Display', sans-serif;
+}
+.textfor:hover{
+    color: black;
+}
+.textfor{
+    color: #8f8f8f;
+}
+
+/* .navbar-brand:hover{
+    color: black;
+} */
+.nav-item{
+    padding: 0% 2%;
+}
+.name{
+    font-family: "lato", sans-serif;
+    font-weight: 900;
+}
+.timeline {
+    position: relative;
+  }
+  
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10px; /* Adjust the distance from the left as needed */
+    bottom: 0;
+    width: 2px; /* Adjust the width of the vertical line as needed */
+    background-color: #000; /* Adjust the color of the vertical line as needed */
+  }
+  
+  .timeline .position-relative {
+    padding-left: 40px; /* Adjust the padding to create space for the icon */
+    margin-bottom: 20px; /* Adjust the margin as needed */
+    position: relative; /* Add position: relative to the timeline items */
+  }
+  .works{
+    padding: 3% 0%;
+  }
+  
+.navbar{
+    background-color: black;
+    color: white;
+    padding-bottom: 0%;
+}
+.fa-brands{
+    padding: 0% 3%;
+    margin-top: 4%;
+    color: #8f8f8f;
+}
+.fa-solid{
+    padding: 0% 3%;
+    margin-top: 4%;
+    color: #8f8f8f;
+}
+.fa-brands:hover{
+    color: white;
+}
+.fa-solid:hover{
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+.powergrid{
+    padding-right: 30%;
+}
+.first-image{
+    width: 80%;
+    height: 80%;
+    margin-top: 0%;
+    border-radius: 3%;
+    z-index: 2;
+}
+.nav-link{
+    color: white;
+    font-family: "Montserrat" "Roboto Mono", monospace;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: 'Clash Display', sans-serif;
+}
+.nav-link:hover{
+    color:  #8f8f8f;
+}
+.project-head{
+    background-color: black;
+     color:white;
+      padding-top: 10%;
+       text-align: center;
+       font-family: 'Clash Display', sans-serif;
+}
+.gogo{
+   transform: scale(0.5);
+}
+.project-explore{
+    background-color: rgb(27, 28, 29);
+}
+.stap{
+    color: #8f8f8f;
+   font-family: " Roboto Mono", monospace;
+   font-family: 'Clash Display', sans-serif;
+    letter-spacing: 0px;
+    font-size: 1.4rem;
+    padding: 1% 0%;
+}
+.staped{
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 0px;
+    font-family: " Roboto Mono", monospace;
+    font-family: 'Clash Display', sans-serif;
+}
+.ball{
+    color: white;
+    background-color: white;
+}
+.first-section{
+    background-color: black;
+ border-bottom-left-radius : 8px;
+ border-bottom-right-radius : 8px;
+ /* --tw-bg-opacity: 1;
+ background-color: rgb(23 23 23/var(--tw-bg-opacity)); */
+}
+.Second-Section{
+    --tw-bg-opacity: 1;
+ background-color: rgb(23 23 23/var(--tw-bg-opacity));
+ color: white;
+ margin-top: 5%;
+ background-color: black;
+ font-family: 'Clash Display', sans-serif;
+ border-top-left-radius : 8px;
+ border-top-right-radius : 8px;
+ border-bottom-left-radius : 8px;
+ border-bottom-right-radius : 8px;
+ padding-bottom: 2%;
+}
+.third-section{
+    background-color: black;
+    margin-top: 5%;
+}
+.about-title{
+    padding-left: 5%;
+    padding-top: 2%;
+}
+.about-content{
+    padding: 0% 5%;  
+}
+.skills-title{
+color: white;
+text-align: center;
+}
+.accomplishment-content{
+    text-align: center;
+    --tw-bg-opacity: 1;
+    background-color: rgb(248 248 248/var(--tw-bg-opacity));
+    padding: 5% 9%;
+    margin: 1% 3%;
+    color: black;
+  }
+.accomplishment{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 4%;
+    }
+    .podcast{
+        display: none;
+    }
+.mag{
+    --tw-bg-opacity: 1;
+    background-color: rgb(23 23 23/var(--tw-bg-opacity));
+}
+@media (max-width: 360px){
+    .iphone-12-fix{
+        display: flex; 
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+@media (max-width: 768px){
+    .first-image{
+        display: none;
+    }
+    .powergrid{
+        padding-right: 10%;
+        color: white;
+    }
+    .nav-link{
+        color: white;
+    }
+    .iphone-12-fix{
+        display: flex; 
+        flex-direction: row;
+    }
+    .accomplishment{
+        margin-left: 2%;
+    }
+    .accomplishment-content{
+        padding: 5% 7%;
+    }
+    .apple-pad{
+        display: none;
+    }
+}
+@media (max-width: 767px){
+    .nav-link{
+      text-align: center;
+    }
+    .first-image{
+      display: none;
+    }
+    .staped{
+        font-size: 1rem;
+    }
+    .powergrid{
+        padding-right: 10%;
+        background-color: white;
+        color: black;
+    }
+    .nav-link{
+        color: black;
+    }
+    .iphone-12-fix{
+        display: flex; 
+        flex-direction: row;
+    }
+    .accomplishment{
+        margin-left: 2%;
+    }
+}
+@media (max-width: 820px){
+    .first-image{
+        display: none;
+    }
+    .powergrid{
+       
+        padding-right: 10%;
+    }
+    .accomplishment{
+        margin-left: 2%;
+    }
+    .accomplishment-content{
+        padding: 5% 7%;
+    }
+    .apple-pad{
+        display: none;
+    }
+}
+
+@media (max-width: 912px){
+    /* . */
+    .first-image{
+        display: none;
+    }
+}
+
