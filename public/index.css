@@ -46,7 +46,6 @@
     /* transition: padding 0.2s ease ; */
     animation-name: submax;
     animation-duration: 3s;
-    animation-direction: alternate-reverse;
     animation-iteration-count:2;
     animation-timing-function: ease 3s;
 }
@@ -285,7 +284,7 @@ text-align: center;
         /* transition: padding 0.2s ease ; */
         animation-name: submax;
         animation-duration: 0s;
-        animation-iteration-count:;
+        animation-iteration-count: 0;
         animation-timing-function: ease 0s;
     }
     @keyframes submax{
@@ -325,7 +324,7 @@ text-align: center;
         /* transition: padding 0.2s ease ; */
         animation-name: submat;
         animation-duration: 0s;
-        animation-iteration-count:;
+        animation-iteration-count:0;
         animation-timing-function: ease 0s;
     }
     .submax{
@@ -371,7 +370,7 @@ text-align: center;
         /* transition: padding 0.2s ease ; */
         animation-name: submax;
         animation-duration: 0s;
-        animation-iteration-count: ;
+        animation-iteration-count: 0;
         animation-timing-function: ease 0s;
     }
     @keyframes submax{
