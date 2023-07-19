@@ -1,0 +1,58 @@
+<%- include("partials/headers.ejs") %>
+    <title>Toluwase-Babalola | Data Scientist</title>
+</head>
+<body>
+ <%- include("partials/second-headers.ejs") %>
+ <section>
+    <div class="row container-fluid contactor">
+<div class="col-md-6 col-lg-6 col-sm-12 contact-me">
+<h2 style="font-family: 800;">Contact Me</h2>
+<p class="contact-me-content">I'm always open to new opportunities and collaborations. Feel free to reach out to me via email or connect with me on LinkedIn: 
+    You can also sign up to my Newsletter via this form
+</p>
+<p>Email: toluwasebabalola44@gmail.com</p>
+<p>LinkedIn:https://www.linkedin.com/in/toluwasebabalola</p>
+<div>
+    <a href="https://twitter.com/thBabs" target="_blank"><i class="fa-brands fa-twitter fa-xl"></i></a> 
+   <a href=" http://github.com/xbabs" target="_blank"><i class="fa-brands fa-github fa-xl"></i> </a>
+   <a href="https://www.linkedin.com/in/toluwasebabalola" target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+    <a href="mailto:toluwasebabalola44@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-xl"></i></a>
+</div>
+</div>
+
+
+
+
+<div class="col-md-6 col-lg-6 col-sm-12">
+
+<form action="/contactMe" method="POST" class="tolu-format">
+<div style="display: flex; flex-direction: row;">
+    <div>
+        <h6>First Name</h6>
+    <input type="text" required class="container-fluid flooder" name="firstname">
+    </div>
+    <div>
+        <h6>Last Name</h6>
+    <input type="text" required class="container-fluid flooder" name="lastname">
+    </div>
+    </div>
+<div>
+    <h6>Email</h6>
+<input type="text" required class="container-fluid flood" name="email">
+</div>
+
+<div>
+    <h6>Phone Number</h6>
+<input type="tel" required class="container-fluid flood" name="phone">
+</div>
+<div>
+    <button type="submit" name="submit">SUBMIT</button>
+</div>
+
+</form>
+</div>
+
+ </section>
+
+
+ <%- include("partials/footers.ejs") %>

@@ -1,8 +1,66 @@
+
+.contactor{
+    margin-top: 10%;
+    font-family: 'Clash Display', sans-serif;
+}
+.tolu-format{
+    box-shadow: 5px 0 10px 5px #ccc;
+    padding: 6% 4%;
+}
+.flood{
+    width: 50%;
+    padding: 2% 1%;
+}
+.flooder{
+    width: 100%;
+}
+.contact-me-content{
+    padding: 4% 0%;
+}
+.contact-me{
+    padding: 2% 5%;
+}
 .navbar-nav{
     padding: 1% 10%;
     padding-bottom: 0%;
    
 }
+.skiller{
+    font-family: 'Clash Display', sans-serif;
+    text-align: center;
+    padding: 1.5% 0%;
+}
+.sub{
+    color: white;
+    padding: 2.5vh 2.5vw;
+    transition: padding 0.2s ease   ;
+    animation-name: suber;
+    animation-duration: 4s;
+    animation-iteration-count:initial;
+    margin-left: 2vw;
+}
+.project-explore{
+    background-color: rgb(27, 28, 29);
+}
+.project-explore:hover{
+    /* transition: padding 0.2s ease ; */
+    animation-name: submax;
+    animation-duration: 3s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count:2;
+    animation-timing-function: ease 3s;
+}
+@keyframes submax{
+    0%{transform:scale(0.9);}
+    100%{transform:scale(1);}
+
+}
+@keyframes suber{
+    0%{transform:scale(0.3);}
+    100%{transform:scale(1.1);}
+
+}
+
 #myNavbar.scrolled {
     background-color: white;
     box-shadow: 5px 0 10px 0 #ccc;
@@ -11,7 +69,6 @@
   .boxboy{
     box-shadow: 5px 0 10px 0 #ccc;
   }
-  
   #myNavbar.scrolled .navbar-brand,
   #myNavbar.scrolled .nav-link {
     color: black;
@@ -24,16 +81,15 @@
     letter-spacing: 5px;
     font-family: 'Clash Display', sans-serif;
 }
+.navbar-brand:hover{
+    color: white;
+}
 .textfor:hover{
     color: black;
 }
 .textfor{
     color: #8f8f8f;
 }
-
-/* .navbar-brand:hover{
-    color: black;
-} */
 .nav-item{
     padding: 0% 2%;
 }
@@ -67,7 +123,6 @@
 .navbar{
     background-color: black;
     color: white;
-    padding-bottom: 0%;
 }
 .fa-brands{
     padding: 0% 3%;
@@ -100,7 +155,6 @@ a{
 }
 .nav-link{
     color: white;
-    font-family: "Montserrat" "Roboto Mono", monospace;
     font-weight: 700;
     font-size: 14px;
     font-family: 'Clash Display', sans-serif;
@@ -118,12 +172,8 @@ a{
 .gogo{
    transform: scale(0.5);
 }
-.project-explore{
-    background-color: rgb(27, 28, 29);
-}
 .stap{
     color: #8f8f8f;
-   font-family: " Roboto Mono", monospace;
    font-family: 'Clash Display', sans-serif;
     letter-spacing: 0px;
     font-size: 1.4rem;
@@ -146,6 +196,9 @@ a{
  border-bottom-right-radius : 8px;
  /* --tw-bg-opacity: 1;
  background-color: rgb(23 23 23/var(--tw-bg-opacity)); */
+}
+.card{
+    transform: scale(0.9);
 }
 .Second-Section{
     --tw-bg-opacity: 1;
@@ -196,13 +249,54 @@ text-align: center;
     --tw-bg-opacity: 1;
     background-color: rgb(23 23 23/var(--tw-bg-opacity));
 }
-@media (max-width: 360px){
-    .iphone-12-fix{
-        display: flex; 
-        flex-direction: row;
-        justify-content: center;
+.github:hover{
+    color: #000;
+  }
+  .submax{
+    margin: 0% 5%;
+  }
+  @media (max-width: 912px){
+    /* . */
+    .first-image{
+        display: none;
+    }
+    .submax{
+       margin: 0% 10%;
     }
 }
+@media (max-width: 820px){
+    .first-image{
+        display: none;
+    }
+    .powergrid{
+       
+        padding-right: 10%;
+    }
+    .accomplishment{
+        margin-left: 2%;
+    }
+    .accomplishment-content{
+        padding: 5% 7%;
+    }
+    .apple-pad{
+        display: none;
+    }
+    .project-explore:hover{
+        /* transition: padding 0.2s ease ; */
+        animation-name: submax;
+        animation-duration: 0s;
+        animation-iteration-count:;
+        animation-timing-function: ease 0s;
+    }
+    @keyframes submax{
+        0%{transform:scale(1);}
+        100%{transform:scale(1);}
+    }
+    .submax{
+        margin: 0% 15%;
+     }
+}
+/*Iphone, pixel and samsung*/
 @media (max-width: 768px){
     .first-image{
         display: none;
@@ -226,6 +320,20 @@ text-align: center;
     }
     .apple-pad{
         display: none;
+    }
+    .project-explore:hover{
+        /* transition: padding 0.2s ease ; */
+        animation-name: submat;
+        animation-duration: 0s;
+        animation-iteration-count:;
+        animation-timing-function: ease 0s;
+    }
+    .submax{
+        margin: 0% 10%;
+    }
+    @keyframes submax{
+        0%{transform:scale(1);}
+        100%{transform:scale(1);}
     }
 }
 @media (max-width: 767px){
@@ -253,30 +361,34 @@ text-align: center;
     .accomplishment{
         margin-left: 2%;
     }
+    .phone-again{
+        padding-top: 2%;
+    }
+    .gogo{
+  padding: 0% 0%;
+     }
+     .project-explore:hover{
+        /* transition: padding 0.2s ease ; */
+        animation-name: submax;
+        animation-duration: 0s;
+        animation-iteration-count: ;
+        animation-timing-function: ease 0s;
+    }
+    @keyframes submax{
+        0%{transform:scale(1);}
+        100%{transform:scale(1);}
+    }
+   .card{
+    transform: scale(1);
+   }
+   .submax{
+    margin: 0% 5%;
 }
-@media (max-width: 820px){
-    .first-image{
-        display: none;
-    }
-    .powergrid{
-       
-        padding-right: 10%;
-    }
-    .accomplishment{
-        margin-left: 2%;
-    }
-    .accomplishment-content{
-        padding: 5% 7%;
-    }
-    .apple-pad{
-        display: none;
+}
+@media (max-width: 360px){
+    .iphone-12-fix{
+        display: flex; 
+        flex-direction: row;
+        justify-content: center;
     }
 }
-
-@media (max-width: 912px){
-    /* . */
-    .first-image{
-        display: none;
-    }
-}
-

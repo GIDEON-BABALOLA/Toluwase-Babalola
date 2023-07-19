@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const keyking = require(__dirname + "/API Keys.js")
 const _ = require("lodash");
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -14,6 +15,16 @@ app.get("/resume", (request, response) => {
 });
 app.get("/projects", (request, response)=>{
     response.render("projects");
+})
+app.get("/contact", (request, response)=>{
+response.render("contact")
+})
+app.post("/contactMe", (request, response)=> {
+    const firstName = request.body.firstname;
+    const lastName = request.body.lastname;
+    const email = request.body.email;
+    const phone = request.body.phone;
+    console.log(firstName);
 })
 app.listen(5000, function(){
     console.log("server is runnin on port 5000")
