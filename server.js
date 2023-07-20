@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const keyking = require(__dirname + "/API Keys.js")
+const https = require("https")
 const _ = require("lodash");
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -19,13 +20,49 @@ app.get("/projects", (request, response)=>{
 app.get("/contact", (request, response)=>{
 response.render("contact")
 })
-app.post("/contactMe", (request, response)=> {
+app.post("/contact", (request, response)=> {
     const firstName = request.body.firstname;
     const lastName = request.body.lastname;
     const email = request.body.email;
     const phone = request.body.phone;
     console.log(firstName);
+    const userData = {
+        members : [
+            {
+                email_address: email,
+                status : "subscribed",
+                merge_fields : {
+                    FNAME : firstName,
+                    LNAME : lastName,
+                    PHONE : phone
+                }
+            }
+        ]
+    }
+    const userInfo = JSON.stringify(userData);
+    const url="https://us21.api.mailchimp.com/3.0/lists/lssksk";
+    const contactKey = keyking.keystore.mailchimp;
+    const options = {
+        method : "POST",
+        auth: "contactList:" +contactKey,
+      };
+      const req = https.request(url, options, function(res){
+        if(res.statusCode === 200){
+     const sucessText = "Congratulations You have successfully signed up to my newsletter. Always Check your inbox for exiting information from me."
+          response.render("success-contact", {sucess : sucessText});
+           }
+              else{
+            const failureText = "UH Oh, You were unable to signUp for the Newsletter,check if you have an active internet connection or contact the developer"
+          response.render("failure-contact", {failure : failureText});
+            }
+        res.on("data", function(data){
+          console.log(JSON.parse(data));
+        })
+      })
+     
+    req.write(userInfo);
+    req.end();
 })
 app.listen(5000, function(){
-    console.log("server is runnin on port 5000")
+    console.log("server is running on port 5000")
 });
