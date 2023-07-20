@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const keyking = require(__dirname + "/API Keys.js")
 const https = require("https")
+const date = require(__dirname + "/date.js");
 const _ = require("lodash");
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -18,8 +19,11 @@ app.get("/projects", (request, response)=>{
     response.render("projects");
 })
 app.get("/contact", (request, response)=>{
-response.render("contact")
+response.render("contact", {dater:date.universalDate()})
 })
+app.get("/blog", (request, response)=>{
+  response.render("blog")
+  })
 app.post("/contact", (request, response)=> {
     const firstName = request.body.firstname;
     const lastName = request.body.lastname;
@@ -49,11 +53,11 @@ app.post("/contact", (request, response)=> {
       const req = https.request(url, options, function(res){
         if(res.statusCode === 200){
      const sucessText = "Congratulations You have successfully signed up to my newsletter. Always Check your inbox for exiting information from me."
-          response.render("success-contact", {sucess : sucessText});
+          response.render("success-contact", {sucess : sucessText, dater:date.universalDate()});
            }
               else{
             const failureText = "UH Oh, You were unable to signUp for the Newsletter,check if you have an active internet connection or contact the developer"
-          response.render("failure-contact", {failure : failureText});
+          response.render("failure-contact", {failure: failureText, dater:date.universalDate()});
             }
         res.on("data", function(data){
           console.log(JSON.parse(data));
@@ -63,6 +67,9 @@ app.post("/contact", (request, response)=> {
     req.write(userInfo);
     req.end();
 })
+app.use( function(request, response, next){
+    response.status(404).render("error", {dat:date.universalDate() });
+  })
 app.listen(5000, function(){
-    console.log("server is running on port 5000")
+    console.log("server is running on port 5000");
 });

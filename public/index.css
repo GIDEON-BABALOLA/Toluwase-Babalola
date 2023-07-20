@@ -9,6 +9,14 @@
     margin: 0% 5%;
     width: 80%;
 }
+.rowcall{
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+}
+.conta:hover{
+    color: white;
+}
 .flood{
     width: 100%;
     padding: 2% 1%;
@@ -56,8 +64,8 @@ padding: 4% 1%;
     /* transition: padding 0.2s ease ; */
     animation-name: submax;
     animation-duration: 3s;
-    animation-iteration-count:2;
-    animation-timing-function: ease 3s;
+    animation-iteration-count:infinite;
+ animation-direction: alternate-reverse;
 }
 @keyframes submax{
     0%{transform:scale(0.9);}
@@ -276,6 +284,7 @@ text-align: center;
   }
   .submax{
     margin: 0% 5%;
+
   }
   @media (max-width: 912px){
     /* . */
