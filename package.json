@@ -7,7 +7,7 @@
     "start": "node server.js",
     "dev" : "nodemon server.js"
   },
-  "author": "Babalola-Gideon",
+  "author": "Toluwase-Babalola",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
