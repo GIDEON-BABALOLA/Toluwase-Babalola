@@ -3,4 +3,149 @@
 </head>
 <body>
     <%- include("partials/second-headers.ejs") %>
+    <!doctype html>
+<html lang="en">
+  <head>
+   </head>
+  <body>
+    
+<div class="container">
+  <div class="nav-scroller py-1 mb-2">
+    <nav class=" "style="text-align: center;">
+      <a class="" href="#" style="text-align: center; color: black;"><b>BLOG</b></a>
+    </nav>
+  </div>
+</div>
+<main class="container" style="padding-top: 7%;" class="dapar">
+  
+  <div class="p-4 p-md-5 mb-4 " style="background-color: black;">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 " style="font-family: 'Clash Display', sans-serif; color: white;">Welcome To My Blog</h1>
+      <p class="lead my-3" style="color: white;">I regularly share my insights and expertise in data science through my blog. Check out some of my featured articles:</p>
+      <p class="lead mb-0"><a href="/blog" class="text-white fw-bold">Continue reading...</a></p>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6"><h5 style="text-align:center;font-family: 'Clash Display', sans-serif;" class="price"><%= dataman %> </h5>
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-dark">Computer Vision</strong>
+          <h6 class="mb-0" style="font-family:  'Clash Display', sans-serif;">
+            AI Basketball Referee System with Computer Vision
+          </h6>
+          <div class="mb-1 text-muted">July 2023</div>
+          <p class="card-text mb-auto">
+            Just concluded an interesting 1-hour session with Ayush Pai, Matt Brown and Akmal Chaudhri, Esq. on 𝐚𝐧 𝐀𝐈 𝐁𝐚𝐬𝐤𝐞𝐭𝐛𝐚𝐥𝐥 𝐑𝐞𝐟𝐞𝐫𝐞𝐞 𝐒𝐲𝐬𝐭𝐞𝐦 𝐰𝐢𝐭𝐡 𝐂𝐨𝐦𝐩𝐮𝐭𝐞𝐫 𝐕𝐢𝐬𝐢𝐨𝐧. The SingleStore DB was used as the database platform.Read More
+          </p>
+          <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src = "/images/baskethball.png"class="bd-placeholder-img" width="250" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill=""/></img>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-dark">Artificial Intelligence</strong>
+          <h5 class="mb-0" style="font-family:  'Clash Display', sans-serif;;">Improving the estimated stock level percentage!</h5>
+          <div class="mb-1 text-muted">June 2023</div>
+          <p class="mb-auto">
+            By leveraging customer data related to products, sales, payment methods, and memberships, businesses can make data-driven decisions to optimize their stock levels.Read More...
+          </p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img  src="/images/stock-blog.png"class="bd-placeholder-img" width="250" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <div class="pb-4 mb-5 fst-normal" style="display: flex">
+        <span class="" style="font-weight: 500; font-size: 1.2rem;">
+        Lets Blog</span> 
+        <form action="/blog/compose" style="">
+          <button type="submit" name="composebot" class="position-sticky btn btn-lg btn-dark "
+          style="margin-left: 100%;">Compose</button>
+        </form>
+      </div>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1" style="font-family:  'Clash Display', sans-serif;">AI Basketball Referee System with Computer Vision</h2>
+        <p class="blog-post-meta">July 13, 2023 by <a href="#">Toluwase-Babalola</a></p>
+
+        <p> </p>
+        <hr>
+        <p></p>
+      </article>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1">Understanding model deployment for production</h2>
+        <p class="blog-post-meta">December 23, 2020 by <a href="#">Toluwase-Babalola</a></p>
+
+
+      </article>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1">Improving the estimated stock level percentage</h2>
+        <p class="blog-post-meta">December 14, 2020 by <a href="#">Toluwase-Babalola</a></p>
+
+      </p>
+      </article>
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="fst-normal">Temperature</h4>
+          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
+        </div>
+
+        <div class="p-2">
+          <h4 class="fst-normal" style="text-align: center;">Calendar</h4>
+          <div class="list-unstyled mb-0">
+            <div class="box">
+                <div class="container">
+                <div id="dycalendar" style="background-color: black; border-radius: 4%;">
+                </div>
+                </div>
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Elsewhere</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Discord</a></li>
+            <li><a href="">Linkedin</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+<script src="
+https://cdn.jsdelivr.net/npm/dycalendarjs@1.2.1/js/dycalendar.min.js
+"></script>
+<script>
+    dycalendar.draw({
+        target: "#dycalendar",
+        type: "month",
+        highlighttargetdate: true,
+        prevnextbutton:"show"
+    })
+document.querySelector(".dycalender-month-container").setAttribute("class", "dycalendar-month-container");
+document.querySelector(".dycalender-target-date").setAttribute("class", "dycalendar-target-date");
+    
+</script>
+  </body>
+</html>
+
     <%- include("partials/footers.ejs") %>

@@ -1,0 +1,44 @@
+<%- include("partials/headers.ejs") %>
+    <title>Toluwase-Babalola | Data Scientist</title>
+</head>
+<body style="background-color; color:white">
+ <%- include("partials/second-headers.ejs") %>
+ <div class="form-container" style="background-color: black;">
+     <form action="/blog/compose" method="POST" class="">
+    <p>
+        <h6 style="text-align:center">BLOG</h6>
+<input type="text" placeholder="Enter Your Name_" name="blogger-name" class="text-boxe container-fluid"></p>
+<p>
+<input type="text" placeholder="Enter Title Of Blog" name="blog-title" class="text-boxe container-fluid">
+</p>
+
+<textarea type="text" placeholder="Write a Blog..." name="blog-content" class="tap-box" rows="10"></textarea>
+    <p>
+<div style="text-align: right; padding: 0% 1%;">
+    <button type="submit" class="subbot btn btn-lg btn-dark">
+        SUBMIT</button>
+<span style=" text-align: right;" class="content">
+    Total Count:<span class="counter">0</span>/100</span>
+    </div>
+</p>
+ </form>
+ </div>
+ <footer style="background-color: white; ">
+    <%- include("partials/second-footer.ejs") %>
+    </footer>
+ <script>
+    const textcontain = document.querySelector(".tap-box");
+    const countNum = document.querySelector(".counter");
+    const countMan = document.querySelector(".content")
+    textcontain.addEventListener("input", count);
+  function count(){
+    const number = textcontain.value.length;
+    countNum.innerHTML = number;
+    if( number <= 100){
+        countMan.classList.remove(".admob");
+    }
+    else{
+        countMan.classList.add(".admob");
+    }
+  }
+ </script>
