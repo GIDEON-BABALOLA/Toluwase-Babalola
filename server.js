@@ -4,12 +4,16 @@ const keyking = require(__dirname + "/API Keys.js")
 const https = require("https")
 const date = require(__dirname + "/date.js");
 const _ = require("lodash");
+const firstBlog = require(__dirname + "/first-blog.js");
+const secondBlog = require(__dirname + "/second-blog.js");
+const thirdBlog = require(__dirname + "/third-blog.js");
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 const scope = [];
-
+console.log(firstBlog.title);
+const newBlog = [];
 app.get("/", (request, response)=> {
     const about = "Welcome to my portfolio website! As a data scientist with expertise in machine learning, I aim to explore my skills, experience, and projects in the field of data science and how real-world problems are solved. With 1+ years of experience in the industry, I have worked on a wide range of projects that have enhanced my skills in statistical analysis and predictive modeling for production. My passion for solving complex problems using data-driven insights drives me to excel in this field. I’m open to collaborate on open-source projects on model development, building and deployment for production";
     response.render("home" , { apple: about});
@@ -24,13 +28,29 @@ app.get("/contact", (request, response)=>{
 response.render("contact", {dater:date.universalDate()})
 })
 app.get("/blog", (request, response)=>{
-    response.render("blog",  {dataman:date.universalDate()})
+  const firstTitle= firstBlog.title;
+  const firstContent=firstBlog.content;
+  const secondTitle = secondBlog.title;
+  const secondContent = secondBlog.content;
+  const thirdTitle = thirdBlog.title;
+  const thirdContent = thirdBlog.content;
+  response.render("blog",  {dataman:date.universalDate(), firstT: firstTitle, firstC: firstContent, secondT: secondTitle,
+  secondC:secondContent, thirdT: thirdTitle, thirdC : thirdContent, content:newBlog});
   })
   app.get("/blog/compose", (request, response)=>{
     response.render("compose");
   })
-app.post("/", (request, response)=>{
-    response.redirect("/");
+app.post("/blog", (request, response)=>{
+  const bloggerName = request.body.bloggername;
+  const blogTitle = request.body.blogtitle;
+  const blogContent = request.body.blogcontent;
+  const userData = {
+    userName : bloggerName,
+    userTitle : blogTitle,
+    userContent : blogContent
+  }
+  newBlog.unshift(userData);
+    response.redirect("/blog");
   })
 app.post("/contact", (request, response)=> {
     const firstName = request.body.firstname;

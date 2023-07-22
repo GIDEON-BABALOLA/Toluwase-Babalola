@@ -34,7 +34,8 @@
     border: 2px solid rgba(255, 255, 255, 0.1);
     font-family: 18px;
     outline:none;
-    padding: 0% 4%;
+    padding: 1% 4%;
+    border-radius: 10px;
 
 }
 .dycalendar-month-container .dycalendar-target-date{
@@ -371,9 +372,17 @@ article{
     color: red;
     animation:  shake .2s ease-in-out;
 }
+.bloge:hover{
+    color:#000;
+}
 @keyframes shake{
-    from{transform: translateX(-50px);}
-    to{transform: translateX(50px);}
+    from{
+        transform: translatex(-50px);
+    };
+    to{
+        transform: translatex(50px);
+    };
+
 }
   @media (max-width: 912px){
     /* . */
@@ -487,6 +496,12 @@ article{
 @media (max-width: 767px){
     .nav-link{
       text-align: center;
+    }
+    .form-containerer{
+        margin: auto 5%;
+    }
+    .tap-box{
+        width: 300px;
     }
     .first-image{
       display: none;

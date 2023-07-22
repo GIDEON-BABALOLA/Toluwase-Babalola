@@ -67,33 +67,46 @@
       <div class="pb-4 mb-5 fst-normal" style="display: flex">
         <span class="" style="font-weight: 500; font-size: 1.2rem;">
         Lets Blog</span> 
-        <form action="/blog/compose" style="">
-          <button type="submit" name="composebot" class="position-sticky btn btn-lg btn-dark "
+        <form action="/blog/compose">
+          <button type="submit"class="position-sticky btn btn-lg btn-dark "
           style="margin-left: 100%;">Compose</button>
         </form>
       </div>
 
       <article class="blog-post">
-        <h2 class="blog-post-title mb-1" style="font-family:  'Clash Display', sans-serif;">AI Basketball Referee System with Computer Vision</h2>
-        <p class="blog-post-meta">July 13, 2023 by <a href="#">Toluwase-Babalola</a></p>
+        <h2 class="blog-post-title mb-1" style="font-family:  'Clash Display', sans-serif;"><%= firstT%></h2>
+        <p class="blog-post-meta">July 13, 2023 by <a href="#"  style="color: #8f8f8f;">Toluwase-Babalola</a></p>
 
-        <p> </p>
+        <p> <%=firstC %></p>
         <hr>
-        <p></p>
+        <!-- <p></p> -->
       </article>
 
       <article class="blog-post">
-        <h2 class="blog-post-title mb-1">Understanding model deployment for production</h2>
-        <p class="blog-post-meta">December 23, 2020 by <a href="#">Toluwase-Babalola</a></p>
-
-
+        <h2 class="blog-post-title mb-1"><%= secondT%></h2>
+        <p class="blog-post-meta">December 23, 2020 by <a href="#" style="color: #8f8f8f;">Toluwase-Babalola</a></p>
+<p><%= secondC%></p>
+<hr>
       </article>
 
       <article class="blog-post">
-        <h2 class="blog-post-title mb-1">Improving the estimated stock level percentage</h2>
-        <p class="blog-post-meta">December 14, 2020 by <a href="#">Toluwase-Babalola</a></p>
-
-      </p>
+        <h2 class="blog-post-title mb-1"><%= thirdT%></h2>
+        <p class="blog-post-meta">December 14, 2020 by <a href="#"  style="color: #8f8f8f;">Toluwase-Babalola</a></p>
+<p><%= thirdC %>   </p>
+<hr>
+      </article>
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1"><%= thirdT%></h2>
+        <p class="blog-post-meta">December 14, 2020 by <a href="#"  style="color: #8f8f8f;">Toluwase-Babalola</a></p>
+<p><%= thirdC %>   </p>
+<hr>
+      </article>
+      <article>  <% content.forEach( function(element){ %>
+        <h2 class="blog-post-title mb-1"><%= element.userTitle %></h2>
+                <p class="blog-post-meta">December 14, 2020 by <a href="#"  style="color: #8f8f8f;"> <%= element.userName%>
+                  </a></p>
+                  <p><%= element.userContent %>   </p>
+      <% }) %>
       </article>
     </div>
 
@@ -118,13 +131,7 @@
         </div>
 
         <div class="p-4">
-          <h4 class="fst-italic">Elsewhere</h4>
-          <ol class="list-unstyled">
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Discord</a></li>
-            <li><a href="">Linkedin</a></li>
-          </ol>
+          <h4 class="fst-normal">Linkedin<i class="fa-brands bloge fa-linkedin fa-xxl"></i></h4>
         </div>
       </div>
     </div>
