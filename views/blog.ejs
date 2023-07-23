@@ -77,6 +77,11 @@
                 <p class="blog-post-meta"><%= dataman %> <a href="#"  style="color: #8f8f8f;"> <%= element.userName%>
                   </a></p>
                   <p><%= element.userContent %>   </p>
+                  <form action="" method="POST">
+                    <div class="lastman">
+                  <input type="text" placeholder="Comment" autocomplete="off" name="added" class="inpot">
+                   <button type="submit" name="button" class="butt">+</button>
+                </div></form>
       <% }) %>
       </article>
       <article class="blog-post">
