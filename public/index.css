@@ -240,6 +240,9 @@ a{
     border-radius: 3%;
     z-index: 2;
 }
+.error-man{
+    margin: 50% 0%;
+}
 .nav-link{
     color: white;
     font-weight: 700;
@@ -357,6 +360,10 @@ article{
     .podcast{
         display: none;
     }
+    .skill{
+        --tw-bg-opacity: 1;
+    background-color: rgb(248 248 248/var(--tw-bg-opacity));
+    }
 .mag{
     --tw-bg-opacity: 1;
     background-color: rgb(23 23 23/var(--tw-bg-opacity));
@@ -375,13 +382,15 @@ article{
 .bloge:hover{
     color:#000;
 }
+.skiller{
+    margin: 0% 1.5%;
+}
+.phoner{
+padding: 10% 1%;
+}
 @keyframes shake{
-    from{
-        transform: translatex(-50px);
-    };
-    to{
-        transform: translatex(50px);
-    };
+    from{transform: translateX(-50px);}
+    to{transform: translateX(50px);}
 
 }
   @media (max-width: 912px){
@@ -505,6 +514,9 @@ article{
     }
     .first-image{
       display: none;
+    }
+    .error-man{
+        margin: 50% 0%;
     }
     .floyd{
         width: 100%;

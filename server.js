@@ -11,7 +11,6 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
-const scope = [];
 console.log(firstBlog.title);
 const newBlog = [];
 app.get("/", (request, response)=> {
@@ -34,6 +33,7 @@ app.get("/blog", (request, response)=>{
   const secondContent = secondBlog.content;
   const thirdTitle = thirdBlog.title;
   const thirdContent = thirdBlog.content;
+  console.log(newBlog);
   response.render("blog",  {dataman:date.universalDate(), firstT: firstTitle, firstC: firstContent, secondT: secondTitle,
   secondC:secondContent, thirdT: thirdTitle, thirdC : thirdContent, content:newBlog});
   })
@@ -57,6 +57,7 @@ app.post("/contact", (request, response)=> {
     const lastName = request.body.lastname;
     const email = request.body.email;
     const phone = request.body.phone;
+    const address = request.body.address;
     console.log(firstName);
     const userData = {
         members : [
@@ -66,14 +67,16 @@ app.post("/contact", (request, response)=> {
                 merge_fields : {
                     FNAME : firstName,
                     LNAME : lastName,
-                    PHONE : phone
+                    PHONE : phone,
+                    ADDRESS: address
                 }
             }
         ]
     }
     const userInfo = JSON.stringify(userData);
-    const url="https://us21.api.mailchimp.com/3.0/lists/lssksk";
+    const url="https://us21.api.mailchimp.com/3.0/lists/82ab7d2590";
     const contactKey = keyking.keystore.mailchimp;
+    console.log(contactKey);
     const options = {
         method : "POST",
         auth: "contactList:" +contactKey,
@@ -81,7 +84,7 @@ app.post("/contact", (request, response)=> {
       const req = https.request(url, options, function(res){
         if(res.statusCode === 200){
      const sucessText = "Congratulations You have successfully signed up to my newsletter. Always Check your inbox for exiting information from me."
-          response.render("success-contact", {sucess : sucessText, dater:date.universalDate()});
+          response.render("success-contact", {success : sucessText, dater:date.universalDate()});
            }
               else{
             const failureText = "UH Oh, You were unable to signUp for the Newsletter,check if you have an active internet connection or contact the developer"

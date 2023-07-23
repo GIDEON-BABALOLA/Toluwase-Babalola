@@ -7,13 +7,13 @@
      <form action="/blog" method="POST" class="form-containerer">
     <p>
         <h6 style="text-align:center">BLOG</h6>
-<input type="text" placeholder="Enter Your Name_" name="bloggername" class="text-boxe container-fluid"></p>
+<input type="text" placeholder="Enter Your Name_" name="bloggername" class="text-boxe container-fluid" required></p>
 <p>
-<input type="text" placeholder="Enter Title Of Blog" name="blogtitle" class="text-boxe container-fluid">
+<input type="text" placeholder="Enter Title Of Blog" name="blogtitle" class="text-boxe container-fluid" required>
 </p>
 
 <textarea type="text" placeholder="Write a Blog..." name="blogcontent" class="tap-box" rows="10"
-maxlength="101"></textarea>
+maxlength="101" autofocus="on"></textarea>
     <p>
 <div style="text-align: right; padding: 0% 1%;">
     <button type="submit" class="subbot btn btn-lg btn-dark">
