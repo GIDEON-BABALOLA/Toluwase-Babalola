@@ -27,7 +27,8 @@
   </div>
 
   <div class="row mb-2">
-    <div class="col-md-6"><h5 style="text-align:center;font-family: 'Clash Display', sans-serif;" class="price"><%= dataman %> </h5>
+    <div class="col-md-6">
+      <h5 style="text-align:center;font-family: 'Clash Display', sans-serif;" class="price"><%= dataman %> </h5>
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-dark">Computer Vision</strong>
@@ -38,13 +39,14 @@
           <p class="card-text mb-auto">
             Just concluded an interesting 1-hour session with Ayush Pai, Matt Brown and Akmal Chaudhri, Esq. on 𝐚𝐧 𝐀𝐈 𝐁𝐚𝐬𝐤𝐞𝐭𝐛𝐚𝐥𝐥 𝐑𝐞𝐟𝐞𝐫𝐞𝐞 𝐒𝐲𝐬𝐭𝐞𝐦 𝐰𝐢𝐭𝐡 𝐂𝐨𝐦𝐩𝐮𝐭𝐞𝐫 𝐕𝐢𝐬𝐢𝐨𝐧. The SingleStore DB was used as the database platform.Read More
           </p>
-          <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+          <a href="/latest/baskethball" class="stretched-link" style="color: #8f8f8f;">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block">
           <img src = "/images/baskethball.png"class="bd-placeholder-img" width="250" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill=""/></img>
         </div>
       </div>
     </div>
+    
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
@@ -54,6 +56,7 @@
           <p class="mb-auto">
             By leveraging customer data related to products, sales, payment methods, and memberships, businesses can make data-driven decisions to optimize their stock levels.Read More...
           </p>
+          <a href="/latest/stock" class="stretched-link" style="color: #8f8f8f;">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block">
           <img  src="/images/stock-blog.png"class="bd-placeholder-img" width="250" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>
@@ -75,15 +78,15 @@
       <article>
           <% content.forEach(function(element){ %>
         <h2 class="blog-post-title mb-1 format"><%= element.userTitle %></h2>
-                <p class="blog-post-meta"><%= element.userDate %> by <a href="#"  style="color: #8f8f8f;"> <%= element.userName%>
-                 </a></p><p> <span class="contained"><%= element.userContent  %> 
+                <p class="blog-post-meta"><%= element.userDate %> by <span href="#"  style="color: #8f8f8f;"> <%= element.userName%>
+                </span></p><p> <span class="contained"><%= element.userContent  %> 
                      </span>
                      <a href="/posts/<%= element.userTitle %>" style="color: #8f8f8f;"><%= element.sender %> </a>   
       <% }) %>
       </article>
       <article class="blog-post">
         <h2 class="blog-post-title mb-1" style="font-family:  'Clash Display', sans-serif;"><%= firstT%></h2>
-        <p class="blog-post-meta">July 13, 2023 by <a href="#"  style="color: #8f8f8f;">Toluwase-Babalola</a></p>
+        <p class="blog-post-meta">July 13, 2023 by <span href="#"  style="color: #8f8f8f;">Toluwase-Babalola</span></p>
 
         <p> <%=firstC %></p>
         <hr>
@@ -92,14 +95,14 @@
 
       <article class="blog-post">
         <h2 class="blog-post-title mb-1"><%= secondT%></h2>
-        <p class="blog-post-meta">July 5, 2023 by <a href="#" style="color: #8f8f8f;">Toluwase-Babalola</a></p>
+        <p class="blog-post-meta">July 5, 2023 by <span href="#" style="color: #8f8f8f;">Toluwase-Babalola</span></p>
 <p><%= secondC%></p>
 <hr>
       </article>
 
       <article class="blog-post">
         <h2 class="blog-post-title mb-1"><%= thirdT%></h2>
-        <p class="blog-post-meta">December 14, 2020 by <a href="#"  style="color: #8f8f8f;">Toluwase-Babalola</a></p>
+        <p class="blog-post-meta">December 14, 2020 by <span href="#"  style="color: #8f8f8f;">Toluwase-Babalola</a></span>
 <p><%= thirdC %>   </p>
 <hr>
       </article>

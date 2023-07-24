@@ -30,6 +30,9 @@
     color: white;
     border: 2px solid rgba(255, 255, 255, 0.1);
 }
+.conta:hover{
+    color: white;
+}
 .text-boxe{
     text-align: center;
     background-color: #121d32;

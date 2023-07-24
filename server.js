@@ -59,6 +59,18 @@ app.post("/blog", (request, response)=>{
   commentContainer.unshift(blogComment);
   response.redirect("/blog");
   });
+  app.get ("/latest/:value", (request, response)=>{
+    if(request.params.value = "baskethball"){
+      response.render("baskethball");
+    }
+   
+  else if(request.params.value = "stock"){
+    response.render("stock-level");
+  }
+  else{
+    console.log("error");
+  }
+  })
   app.get("/posts/:value", (request, response) => {
     const loader = _.lowerCase(newBlog[0].userTitle);
     const loadman = _.replace(loader, /\s+/g, '-');
