@@ -47,11 +47,13 @@ app.post("/blog", (request, response)=>{
   const blogTitle = request.body.blogtitle;
   const blogContent = request.body.blogcontent;
   const datetime = request.body.dater;
+  const newSend = "continue reading...";
   const userData = {
     userName : bloggerName,
     userTitle : blogTitle,
     userContent : blogContent,
-    userDate:datetime
+    userDate:datetime,
+    sender: newSend
   }
   const blogComment = request.body.addition;
   newBlog.unshift(userData);

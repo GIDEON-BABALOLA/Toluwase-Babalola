@@ -22,7 +22,7 @@
     <div class="col-md-6 px-0">
       <h1 class="display-4 " style="font-family: 'Clash Display', sans-serif; color: white;">Welcome To My Blog</h1>
       <p class="lead my-3" style="color: white;">I regularly share my insights and expertise in data science through my blog. Check out some of my featured articles:</p>
-      <p class="lead mb-0"><a href="/blog" class="text-white fw-bold">Continue reading...</a></p>
+      <p class="lead mb-0"><a href="/blog" class="text-white fw-bold counter">Continue reading...</a></p>
     </div>
   </div>
 
@@ -76,8 +76,8 @@
           <% content.forEach(function(element){ %>
         <h2 class="blog-post-title mb-1 format"><%= element.userTitle %></h2>
                 <p class="blog-post-meta"><%= element.userDate %><a href="#"  style="color: #8f8f8f;"> <%= element.userName%>
-                 </a></p><p><%= element.userContent.substring(0, 100) %>
-                  <a href="/posts/<%= element.userTitle %>" style="color: #8f8f8f;">continue reading</a></p>
+                 </a></p><p> <span class="contained"><%= element.userContent %></span>
+                  <a href="/posts/<%= element.userTitle %>" style="color: #8f8f8f;"><%= element.sender %></a></p>
       <% }) %>
       <%  for( i = 0; i < blogComment.length; i++) { %>
         <p style="color:#8f8f8f"> <%= blogComment[i] %></p>
@@ -144,12 +144,22 @@
 <script src="
 https://cdn.jsdelivr.net/npm/dycalendarjs@1.2.1/js/dycalendar.min.js
 "></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
   if(document.querySelector(".format")){
      document.querySelector(".player").classList.remove("pricer");
 }else{
      document.querySelector(".player").classList.add("pricer");
 }
+$(document).ready(function(){
+  
+  $('.contained').each(function (f) {
+
+      var newstr = $(this).text().substring(0,500);
+      $(this).text(newstr);
+
+    });
+})
     dycalendar.draw({
         target: "#dycalendar",
         type: "month",
