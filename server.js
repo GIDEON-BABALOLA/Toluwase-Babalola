@@ -14,6 +14,7 @@ app.set('view engine', 'ejs');
 console.log(firstBlog.title);
 const newBlog = [];
 const commentContainer = [];
+const contentar = [];
 app.get("/", (request, response)=> {
     const about = "Welcome to my portfolio website! As a data scientist with expertise in machine learning, I aim to explore my skills, experience, and projects in the field of data science and how real-world problems are solved. With 1+ years of experience in the industry, I have worked on a wide range of projects that have enhanced my skills in statistical analysis and predictive modeling for production. My passion for solving complex problems using data-driven insights drives me to excel in this field. I’m open to collaborate on open-source projects on model development, building and deployment for production";
     response.render("home" , { apple: about});
@@ -56,7 +57,19 @@ app.post("/blog", (request, response)=>{
   newBlog.unshift(userData);
   commentContainer.unshift(blogComment);
   response.redirect("/blog");
-  })
+  });
+  app.get("/posts/:value", (request, response) => {
+    const loader = _.lowerCase(newBlog[0].userTitle);
+    const loadman = _.replace(loader, /\s+/g, '-');
+    console.log(request.params.value); //TEST
+    console.log(loadman); //test
+    if(request.params.value === loadman){
+      response.render("post", {content:newBlog, blogComment : commentContainer});
+    }
+    else{
+      response.render("post", {content:newBlog, blogComment : commentContainer});
+    }
+  });
 app.post("/contact", (request, response)=> {
     const firstName = request.body.firstname;
     const lastName = request.body.lastname;

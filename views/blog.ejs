@@ -72,10 +72,12 @@
           style="margin-left: 100%;">Compose</button>
         </form>
       </div>
-      <article>  <% content.forEach(function(element){ %>
+      <article>
+          <% content.forEach(function(element){ %>
         <h2 class="blog-post-title mb-1 format"><%= element.userTitle %></h2>
                 <p class="blog-post-meta"><%= element.userDate %><a href="#"  style="color: #8f8f8f;"> <%= element.userName%>
-                 </a></p><p><%= element.userContent %></p>
+                 </a></p><p><%= element.userContent.substring(0, 100) %>
+                  <a href="/posts/<%= element.userTitle %>" style="color: #8f8f8f;">continue reading</a></p>
       <% }) %>
       <%  for( i = 0; i < blogComment.length; i++) { %>
         <p style="color:#8f8f8f"> <%= blogComment[i] %></p>
@@ -161,3 +163,4 @@ document.querySelector(".dycalender-target-date").setAttribute("class", "dycalen
 </html>
 
     <%- include("partials/footers.ejs") %>
+    
