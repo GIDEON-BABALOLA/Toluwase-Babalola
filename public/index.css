@@ -10,6 +10,9 @@
     /*This is where the color of the days comes in*/
     color: white;
 }
+.pricer{
+    display: none;
+}
 /* .subbot{
     background-color: #121d32;
     color: white;

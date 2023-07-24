@@ -13,6 +13,7 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 console.log(firstBlog.title);
 const newBlog = [];
+const commentContainer = [];
 app.get("/", (request, response)=> {
     const about = "Welcome to my portfolio website! As a data scientist with expertise in machine learning, I aim to explore my skills, experience, and projects in the field of data science and how real-world problems are solved. With 1+ years of experience in the industry, I have worked on a wide range of projects that have enhanced my skills in statistical analysis and predictive modeling for production. My passion for solving complex problems using data-driven insights drives me to excel in this field. I’m open to collaborate on open-source projects on model development, building and deployment for production";
     response.render("home" , { apple: about});
@@ -35,22 +36,26 @@ app.get("/blog", (request, response)=>{
   const thirdContent = thirdBlog.content;
   console.log(newBlog);
   response.render("blog",  {dataman:date.universalDate(), firstT: firstTitle, firstC: firstContent, secondT: secondTitle,
-  secondC:secondContent, thirdT: thirdTitle, thirdC : thirdContent, content:newBlog});
+  secondC:secondContent, thirdT: thirdTitle, thirdC : thirdContent, content:newBlog, blogComment : commentContainer});
   })
   app.get("/blog/compose", (request, response)=>{
-    response.render("compose");
+    response.render("compose", {dataman:date.universalDate()});
   })
 app.post("/blog", (request, response)=>{
   const bloggerName = request.body.bloggername;
   const blogTitle = request.body.blogtitle;
   const blogContent = request.body.blogcontent;
+  const datetime = request.body.dater;
   const userData = {
     userName : bloggerName,
     userTitle : blogTitle,
-    userContent : blogContent
+    userContent : blogContent,
+    userDate:datetime
   }
+  const blogComment = request.body.addition;
   newBlog.unshift(userData);
-    response.redirect("/blog");
+  commentContainer.unshift(blogComment);
+  response.redirect("/blog");
   })
 app.post("/contact", (request, response)=> {
     const firstName = request.body.firstname;

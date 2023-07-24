@@ -11,15 +11,18 @@
 <p>
 <input type="text" placeholder="Enter Title Of Blog" name="blogtitle" class="text-boxe container-fluid" required>
 </p>
+<p style="display:none">
+<input type="text" name="dater" value="<%= dataman %>">
+</p>
 
 <textarea type="text" placeholder="Write a Blog..." name="blogcontent" class="tap-box" rows="10"
-maxlength="101" autofocus="on"></textarea>
+maxlength="801" autofocus="on"></textarea>
     <p>
 <div style="text-align: right; padding: 0% 1%;">
     <button type="submit" class="subbot btn btn-lg btn-dark">
         SUBMIT</button>
 <span style=" text-align: right;" class="content">
-    Total Count:<span class="counter">0</span>/100</span>
+    Total Count:<span class="counter">0</span>/800</span>
     </div>
 </p>
  </form>
@@ -35,7 +38,7 @@ maxlength="101" autofocus="on"></textarea>
   function count(){
     const number = textcontain.value.length;
     countNum.innerHTML = number;
-    if( number <= 100){
+    if( number <= 800){
         countMan.classList.remove("admob");
     }
     else{

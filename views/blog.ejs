@@ -72,17 +72,19 @@
           style="margin-left: 100%;">Compose</button>
         </form>
       </div>
-      <article>  <% content.forEach( function(element){ %>
-        <h2 class="blog-post-title mb-1"><%= element.userTitle %></h2>
-                <p class="blog-post-meta"><%= dataman %> <a href="#"  style="color: #8f8f8f;"> <%= element.userName%>
-                  </a></p>
-                  <p><%= element.userContent %>   </p>
-                  <form action="" method="POST">
-                    <div class="lastman">
-                  <input type="text" placeholder="Comment" autocomplete="off" name="added" class="inpot">
-                   <button type="submit" name="button" class="butt">+</button>
-                </div></form>
+      <article>  <% content.forEach(function(element){ %>
+        <h2 class="blog-post-title mb-1 format"><%= element.userTitle %></h2>
+                <p class="blog-post-meta"><%= element.userDate %><a href="#"  style="color: #8f8f8f;"> <%= element.userName%>
+                 </a></p><p><%= element.userContent %></p>
       <% }) %>
+      <%  for( i = 0; i < blogComment.length; i++) { %>
+        <p style="color:#8f8f8f"> <%= blogComment[i] %></p>
+    <% } %>
+    <form action="/blog" method="POST" class="player">
+      <div class="lastman">
+    <input type="text" placeholder="Comment" autocomplete="off" name="addition" class="inpot">
+     <button type="submit" name="button" class="butt">+</button>
+  </div></form>
       </article>
       <article class="blog-post">
         <h2 class="blog-post-title mb-1" style="font-family:  'Clash Display', sans-serif;"><%= firstT%></h2>
@@ -133,6 +135,7 @@
         </div>
       </div>
     </div>
+    
   </div>
 
 </main>
@@ -140,6 +143,11 @@
 https://cdn.jsdelivr.net/npm/dycalendarjs@1.2.1/js/dycalendar.min.js
 "></script>
 <script>
+  if(document.querySelector(".format")){
+     document.querySelector(".player").classList.remove("pricer");
+}else{
+     document.querySelector(".player").classList.add("pricer");
+}
     dycalendar.draw({
         target: "#dycalendar",
         type: "month",
@@ -147,8 +155,7 @@ https://cdn.jsdelivr.net/npm/dycalendarjs@1.2.1/js/dycalendar.min.js
         prevnextbutton:"show"
     })
 document.querySelector(".dycalender-month-container").setAttribute("class", "dycalendar-month-container");
-document.querySelector(".dycalender-target-date").setAttribute("class", "dycalendar-target-date");
-    
+document.querySelector(".dycalender-target-date").setAttribute("class", "dycalendar-target-date");  
 </script>
   </body>
 </html>
