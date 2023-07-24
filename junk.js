@@ -1,0 +1,1 @@
+{/* <a href="/posts/<%= element.userTitle %>" style="color: #8f8f8f;"></a></p> */}

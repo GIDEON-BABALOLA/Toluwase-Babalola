@@ -14,7 +14,6 @@ app.set('view engine', 'ejs');
 console.log(firstBlog.title);
 const newBlog = [];
 const commentContainer = [];
-const contentar = [];
 app.get("/", (request, response)=> {
     const about = "Welcome to my portfolio website! As a data scientist with expertise in machine learning, I aim to explore my skills, experience, and projects in the field of data science and how real-world problems are solved. With 1+ years of experience in the industry, I have worked on a wide range of projects that have enhanced my skills in statistical analysis and predictive modeling for production. My passion for solving complex problems using data-driven insights drives me to excel in this field. I’m open to collaborate on open-source projects on model development, building and deployment for production";
     response.render("home" , { apple: about});
@@ -66,10 +65,12 @@ app.post("/blog", (request, response)=>{
     console.log(request.params.value); //TEST
     console.log(loadman); //test
     if(request.params.value === loadman){
-      response.render("post", {content:newBlog, blogComment : commentContainer});
+      response.render("post", {contentName:newBlog[0].userName, blogComment : commentContainer,  contentTitle:newBlog[0].userTitle,
+      contentContent:newBlog[0].userContent, contentTime: newBlog[0].userDate, contentURL:newBlog[0].sender});
     }
     else{
-      response.render("post", {content:newBlog, blogComment : commentContainer});
+      response.render("post", {contentName:newBlog[0].userName, blogComment : commentContainer,  contentTitle:newBlog[0].userTitle,
+        contentContent:newBlog[0].userContent, contentTime: newBlog[0].userDate, contentURL:newBlog[0].sender});
     }
   });
 app.post("/contact", (request, response)=> {

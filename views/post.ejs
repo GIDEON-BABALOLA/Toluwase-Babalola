@@ -5,19 +5,10 @@
  <%- include("partials/second-headers.ejs") %>
 
  <div styel="text-align:center">
-    <article>  <% content.forEach(function(element){ %>
-        <h2 class="blog-post-title mb-1 format"><%= element.userTitle %></h2>
-                <p class="blog-post-meta"><%= element.userDate %><a href="#"  style="color: #8f8f8f;"> <%= element.userName%>
-                 </a></p><p><%= element.userContent %></p>
-      <% }) %>
-      <%  for( i = 0; i < blogComment.length; i++) { %>
-        <p style="color:#8f8f8f"> <%= blogComment[i] %></p>
-    <% } %>
-    <form action="/blog" method="POST" class="player">
-      <div class="lastman">
-    <input type="text" placeholder="Comment" autocomplete="off" name="addition" class="inpot">
-     <button type="submit" name="button" class="butt">+</button>
-  </div></form>
+    <article style="margin-top: 20%;">  
+        <h2 class="blog-post-title mb-1 format"><%= contentTitle %></h2>
+                <p class="blog-post-meta"><%= contentTime %> by <a href="#"  style="color: #8f8f8f;"> <%= contentName%>
+                 </a></p><p><%= contentContent %></p>
       </article>
  </div>
  <%- include("partials/footers.ejs") %>
