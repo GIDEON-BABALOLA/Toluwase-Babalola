@@ -8,9 +8,23 @@ const firstBlog = require(__dirname + "/first-blog.js");
 const secondBlog = require(__dirname + "/second-blog.js");
 const thirdBlog = require(__dirname + "/third-blog.js");
 const app = express();
+const path = require("path");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'public/images/'); // The directory where the uploaded images will be stored
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage: storage });
+
 console.log(firstBlog.title);
 const newBlog = [];
 const commentContainer = [];
@@ -41,18 +55,21 @@ app.get("/blog", (request, response)=>{
   app.get("/blog/compose", (request, response)=>{
     response.render("compose", {dataman:date.universalDate()});
   })
-app.post("/blog", (request, response)=>{
+app.post("/blog", upload.single('image'), (request, response)=>{
   const bloggerName = request.body.bloggername;
   const blogTitle = request.body.blogtitle;
   const blogContent = request.body.blogcontent;
   const datetime = request.body.dater;
   const newSend = "continue reading...";
+  const image = request.file.path
+  const cleanedImagePath = _.replace(image, 'public', '');
   const userData = {
     userName : bloggerName,
     userTitle : blogTitle,
     userContent : blogContent,
     userDate:datetime,
-    sender: newSend
+    sender: newSend,
+    picture: cleanedImagePath
   }
   const blogComment = request.body.addition;
   newBlog.unshift(userData);
@@ -79,11 +96,11 @@ app.post("/blog", (request, response)=>{
     console.log(loadman); //test
     if(request.params.value === loadman){
       response.render("post", {contentName:newBlog[0].userName, blogComment : commentContainer,  contentTitle:newBlog[0].userTitle,
-      contentContent:newBlog[0].userContent, contentTime: newBlog[0].userDate, contentURL:newBlog[0].sender});
+      contentContent:newBlog[0].userContent, contentTime: newBlog[0].userDate, contentURL:newBlog[0].sender, contentImage: newBlog[0].picture});
     }
     else{
       response.render("post", {contentName:newBlog[0].userName, blogComment : commentContainer,  contentTitle:newBlog[0].userTitle,
-        contentContent:newBlog[0].userContent, contentTime: newBlog[0].userDate, contentURL:newBlog[0].sender});
+        contentContent:newBlog[0].userContent, contentTime: newBlog[0].userDate, contentURL:newBlog[0].sender, contentImage: newBlog[0].picture});
     }
   });
 app.post("/contact", (request, response)=> {

@@ -6,7 +6,7 @@
 <body style="color:white; background-color: black;">
  <%- include("partials/second-headers.ejs") %>
  <div class="form-container " style="background-color: black;">
-     <form action="/blog" method="POST" class="form-containerer">
+     <form action="/blog" method="POST" class="form-containerer" enctype="multipart/form-data">
     <p>
         <h6 style="text-align:center">BLOG</h6>
 <input type="text" placeholder="Enter Your Name_" name="bloggername" class="text-boxe container-fluid" required></p>
@@ -18,9 +18,10 @@
 </p>
 
 <textarea type="text" placeholder="Write a Blog..." name="blogcontent" class="tap-box" rows="12"
-maxlength="1001" autofocus="on"></textarea>
+maxlength="1001" autofocus="on" required></textarea>
     <p>
-<div style="text-align: right; padding: 0% 1%;">
+        <input type="file" accept="image/*" name="image" id="file"><i class="fa-solid fa-camera"></i>
+<div style="text-align: center; padding: 0% 1%;">
     <button type="submit" class="subbot btn btn-lg btn-dark">
         SUBMIT</button>
 <span style=" text-align: right;" class="content">
