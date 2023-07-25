@@ -60,12 +60,13 @@ app.post("/blog", (request, response)=>{
   response.redirect("/blog");
   });
   app.get ("/latest/:value", (request, response)=>{
-    if(request.params.value = "baskethball"){
-      response.render("baskethball");
-    }
-   
-  else if(request.params.value = "stock"){
-    response.render("stock-level");
+    if(request.params.value === "baskethball"){
+      response.render("latest", { blogComment : commentContainer,  contentTitle:firstBlog.title,
+        contentContent:firstBlog.content,});
+      }
+  else if(request.params.value === "stock"){
+    response.render("latest", { blogComment : commentContainer,  contentTitle:thirdBlog.title,
+      contentContent:thirdBlog.content})
   }
   else{
     console.log("error");

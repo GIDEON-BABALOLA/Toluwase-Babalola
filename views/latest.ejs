@@ -1,0 +1,24 @@
+<%- include("partials/headers.ejs") %>
+    <title>Toluwase-Babalola | Data Scientist</title>
+    <style>
+      .article-post{
+        text-align: center;
+        background-color: black;
+        color: white;
+      }
+    </style>
+</head>
+<body class="article-post">
+ <%- include("partials/second-headers.ejs") %>
+
+ <div styel="">
+    <article style="margin-top: 10%;" class="article-post">  
+      <img src="/images/<%= contentTitle %>.png" alt="picture" width="50%" height="50%">
+        <h2 class="blog-post-title mb-1 format "><%= contentTitle %></h2>
+                <p class="blog-post-meta">July 13, 2023 by <span href="#"  style="color: #8f8f8f;">Toluwase-Babalola
+                </span></p>
+                 <p><%= contentContent %></p>
+      </article>
+ </div>
+ <%- include("partials/blog-footer.ejs") %>
+

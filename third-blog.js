@@ -1,7 +1,7 @@
 module.exports.title = "Improving the estimated stock level percentage!";
 module.exports.content = "By leveraging customer data related to products, sales, payment methods, and memberships, businesses can " +
 "make data-driven decisions to optimize their stock levels. This ensures that they have the right products in stock, minimize stockouts, " +
-"improve customer satisfaction, and maximize sales opportunities..."+
+"improve customer satisfaction, and maximize sales opportunities..." +
  "An example>>>Recently, I completed an engaging AI and Analytics virtual internship at Forage (Cognizant). As a team member, I had the opportunity" +
 " to analyze one-week grocery transaction data provided by the account team. It was an insightful experience, and I wanted to take a moment to share my " +
 "findings and recommendations.Here: https://lnkd.in/e4QzepHyProcess (see attached image):" +
@@ -18,8 +18,8 @@ module.exports.content = "By leveraging customer data related to products, sales
 "- There is a strong correlation (0.79) between the unit price and the total money spent in the store."+
  
 "💡 Recommendations:" +
-"Based on the developed model, I have drawn some recommendations for optimizing sales and improving customer experience:"+
+"Based on the developed model, I have drawn some recommendations for optimizing sales and improving customer experience: "+
 "1️⃣ To increase sales, consider placing herbs and related items close to fruits and vegetables."+
-"2️⃣ Exploring additional features and data will enhance the digitization of payment methods."+
-"3️⃣ Encourage non-members to register for free standard membership, which can boost sales and attract new customers."+
+"2️⃣ Exploring additional features and data will enhance the digitization of payment methods." +
+"3️⃣ Encourage non-members to register for free standard membership, which can boost sales and attract new customers." +
 "4️⃣ Consider offering discounts on items that have low sales to influence customers' decisions, potentially attracting new customers and increasing overall sales."

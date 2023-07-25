@@ -3,7 +3,7 @@
     <style>
     </style>
 </head>
-<body style="color:white;">
+<body style="color:white; background-color: black;">
  <%- include("partials/second-headers.ejs") %>
  <div class="form-container " style="background-color: black;">
      <form action="/blog" method="POST" class="form-containerer">
@@ -17,21 +17,21 @@
 <input type="text" name="dater" value="<%= dataman %>">
 </p>
 
-<textarea type="text" placeholder="Write a Blog..." name="blogcontent" class="tap-box" rows="10"
-maxlength="801" autofocus="on"></textarea>
+<textarea type="text" placeholder="Write a Blog..." name="blogcontent" class="tap-box" rows="12"
+maxlength="1001" autofocus="on"></textarea>
     <p>
 <div style="text-align: right; padding: 0% 1%;">
     <button type="submit" class="subbot btn btn-lg btn-dark">
         SUBMIT</button>
 <span style=" text-align: right;" class="content">
-    Total Count:<span class="counter">0</span>/800</span>
+    Total Count:<span class="counter">0</span>/1000</span>
     </div>
 </p>
  </form>
  </div>
- <footer style="background-color: white; ">
-    <%- include("partials/second-footer.ejs") %>
-    </footer>
+
+    <%- include("partials/blog-footer.ejs") %>
+
  <script>
     const textcontain = document.querySelector(".tap-box");
     const countNum = document.querySelector(".counter");
@@ -40,7 +40,7 @@ maxlength="801" autofocus="on"></textarea>
   function count(){
     const number = textcontain.value.length;
     countNum.innerHTML = number;
-    if( number <= 800){
+    if( number <= 1000){
         countMan.classList.remove("admob");
     }
     else{
