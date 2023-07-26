@@ -65,7 +65,7 @@ app.post("/blog", (request, response, next)=>{
     if (err instanceof multer.MulterError) {
       // Handle multer-specific errors (e.g., file size exceeded)
       if (err.code === 'LIMIT_FILE_SIZE') {
-        return response.status(400).send('File size limit exceeded. Maximum file size is 10KB.');
+        return response.status(400).render("compose",  {dataman:date.universalDate()});
       }
     } else if (err) {
       // Handle other errors (if any)
