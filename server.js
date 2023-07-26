@@ -60,7 +60,17 @@ app.get("/blog", (request, response)=>{
   app.get("/blog/compose", (request, response)=>{
     response.render("compose", {dataman:date.universalDate()});
   })
-app.post("/blog", upload.single('image'), (request, response)=>{
+app.post("/blog", (request, response, next)=>{
+  upload.single('image')(request, response, function (err) {
+    if (err instanceof multer.MulterError) {
+      // Handle multer-specific errors (e.g., file size exceeded)
+      if (err.code === 'LIMIT_FILE_SIZE') {
+        return response.status(400).send('File size limit exceeded. Maximum file size is 10KB.');
+      }
+    } else if (err) {
+      // Handle other errors (if any)
+      return response.status(500).send('An unexpected error occurred during file upload.');
+    }
   const bloggerName = request.body.bloggername;
   const blogTitle = request.body.blogtitle;
   const blogContent = request.body.blogcontent;
@@ -80,7 +90,8 @@ app.post("/blog", upload.single('image'), (request, response)=>{
   newBlog.unshift(userData);
   commentContainer.unshift(blogComment);
   response.redirect("/blog");
-  });
+  })
+});
   app.get ("/latest/:value", (request, response)=>{
     if(request.params.value === "baskethball"){
       response.render("latest", { blogComment : commentContainer,  contentTitle:firstBlog.title,
