@@ -26,7 +26,7 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage,
   limits: {
-    fileSize: 40560, // 20 kilobytes in bytes (1 kilobyte = 1024 bytes)
+    fileSize: 	2000000, // 2 Megabyte in bytes (1 kilobyte = 1024 bytes)
   },
 });
 
@@ -65,7 +65,7 @@ app.post("/blog", (request, response, next)=>{
     if (err instanceof multer.MulterError) {
       // Handle multer-specific errors (e.g., file size exceeded)
       if (err.code === 'LIMIT_FILE_SIZE') {
-        return response.status(400).render("compose",  {dataman:date.universalDate()});
+        return response.status(400).render("error-compose",  {dataman:date.universalDate()});
       }
     } else if (err) {
       // Handle other errors (if any)

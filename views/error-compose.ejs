@@ -85,22 +85,27 @@
 
 <textarea type="text" placeholder="Write a Blog..." name="blogcontent" class="tap-box" rows="12"
 maxlength="1001" autofocus="on" required></textarea>
+
     <p>
+        <span style="color: white;">The image should not be more that 2 Megabyte</span>
         <div class="image-file-wrapper">
             <label for="file" class="image-file-label">
               <span class="camera-icon ">📷</span>
               <span class="file-text">Choose an Image</span>
+           
             </label>
             <input type="file" accept="image/*" name="image" id="file" class="image-file" onchange="updateLabel()">
+           
           </div>
-          
+         
       
 <div style="text-align: center; padding: 0% 1%;">
-    <button type="submit" class=" btn btn-lg btn-dark beat" onclick="player()">
+    <button type="submit" class="subbot btn btn-lg btn-dark beat" onclick="player()">
         SUBMIT</button>
 <span style=" text-align: right;" class="content">
     Total Count:<span class="counter">0</span>/1000</span>
     </div>
+    
 </p>
  </form>
  </div>

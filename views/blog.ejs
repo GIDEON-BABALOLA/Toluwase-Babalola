@@ -77,7 +77,7 @@
         Lets Blog</span> 
         <form action="/blog/compose">
           <button type="submit"class="position-sticky btn btn-lg btn-dark "
-          style="margin-left: 100%;">Compose</button>
+          style="margin-left: 100%;" onclick="player()">Compose</button>
         </form>
       </div>
       <article>
@@ -149,6 +149,10 @@ https://cdn.jsdelivr.net/npm/dycalendarjs@1.2.1/js/dycalendar.min.js
 "></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
+    function player(){
+    const compose = new Audio("audio/compose.mp3");
+            compose.play();
+  }
 $(document).ready(function(){
   
   $('.contained').each(function (f) {
