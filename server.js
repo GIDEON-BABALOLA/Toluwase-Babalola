@@ -4,6 +4,7 @@ const keyking = require(__dirname + "/API Keys.js")
 const https = require("https")
 const date = require(__dirname + "/date.js");
 const _ = require("lodash");
+const city = require(__dirname + "/junk.js");
 const firstBlog = require(__dirname + "/first-blog.js");
 const secondBlog = require(__dirname + "/second-blog.js");
 const thirdBlog = require(__dirname + "/third-blog.js");
@@ -13,7 +14,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 const multer = require('multer');
-
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'public/images/'); // The directory where the uploaded images will be stored
@@ -22,14 +22,12 @@ const storage = multer.diskStorage({
     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
   },
 });
-
 const upload = multer({
   storage: storage,
   limits: {
     fileSize: 	2000000, // 2 Megabyte in bytes (1 kilobyte = 1024 bytes)
   },
 });
-
 console.log(firstBlog.title);
 const newBlog = [];
 const commentContainer = [];
@@ -76,8 +74,12 @@ app.post("/blog", (request, response, next)=>{
   const blogContent = request.body.blogcontent;
   const datetime = request.body.dater;
   const newSend = "continue reading...";
-  const image = request.file.path
-  const cleanedImagePath = _.replace(image, 'public', '');
+ 
+  let cleanedImagePath = null; // Default value when no image is uploaded
+  if (request.file) {
+    const image = request.file.path; // Assuming multer saves the path to the 'path' property
+    cleanedImagePath = _.replace(image, 'public', '');
+  }
   const userData = {
     userName : bloggerName,
     userTitle : blogTitle,

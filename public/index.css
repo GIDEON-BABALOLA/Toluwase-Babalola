@@ -434,6 +434,17 @@ article{
 }
 .phoner{
 padding: 10% 1%;
+cursor: pointer;
+}
+.phoner:hover{
+    background-color: white;
+}
+.pricer{
+    color: #000;
+}
+
+.pricee:hover{
+    color: #000;
 }
 @keyframes shake{
     from{transform: translateX(-50px);}
