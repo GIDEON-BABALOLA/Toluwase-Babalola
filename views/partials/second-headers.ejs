@@ -3,12 +3,16 @@
     <div class="container-fluid">
       <div class="iphone-12-fix">
       <a class="navbar-brand" href="#">Toluwase-Babalola</a>
-      <button class="navbar-toggler ball" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler ball" type="button" data-bs-toggle="offcanvas"
+       data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon ball"></span>
-      </button>
+      </button>   
       </div>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto powergrid" >
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarNav">
+        <ul class="navbar-nav ms-auto powergrid offcanvas-body" >
+          <span class="close-icon ball d-md-none" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class="fa-solid fa-x" style="color: black;"></i>
+           </span>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/">HOME</a>
           </li><hr>

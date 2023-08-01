@@ -10,6 +10,9 @@
     /*This is where the color of the days comes in*/
     color: white;
 }
+.phoneo{
+    display: none;
+}
 .pricer{
     display: none;
 }
@@ -108,10 +111,11 @@ padding: 4% 1%;
     padding: 2% 5%;
 }
 .navbar-nav{
-    padding: 1% 10%;
+    padding: 1% 20%;
     padding-bottom: 0%;
-   
+   margin-right: 20%;
 }
+
 .inpot:checked+p {
     text-decoration: line-through;
     text-decoration-color: #050a52;
@@ -164,6 +168,9 @@ text-decoration-thickness: 0.2px ;
     animation-duration: 3s;
     animation-iteration-count:infinite;
  animation-direction: alternate-reverse;
+}
+nav{
+    padding-top: 7%;
 }
 @keyframes submax{
     0%{transform:scale(0.9);}
@@ -365,6 +372,9 @@ a{
     height: 100vh;
     margin-top: 3%;
 }
+.powr{
+    display: none;
+}
 .about-title{
     padding-left: 5%;
     padding-top: 2%;
@@ -446,10 +456,12 @@ cursor: pointer;
 .pricee:hover{
     color: #000;
 }
+
 @keyframes shake{
     from{transform: translateX(-50px);}
     to{transform: translateX(50px);}
 
+    
 }
   @media (max-width: 912px){
     /* . */
@@ -552,6 +564,16 @@ cursor: pointer;
     .submax{
         margin: 0% 10%;
     }
+    .offcanvas {
+     max-width: 300px; /* Adjust this value to control the width of the offcanvas */
+      padding-top: 70px;
+      padding-bottom: 70px; /* Add padding to the offcanvas for spacing */
+        background-color: white; 
+       /* Optional: Add a background color for the offcanvas */
+      }
+      .offcanvas-body{
+      width: 100%;
+      }
     @keyframes submax{
         0%{transform:scale(1);}
         100%{transform:scale(1);}
@@ -564,9 +586,14 @@ cursor: pointer;
     .nav-link{
       text-align: center;
     }
+    .phoneo{
+        display: block;
+        margin-top: 10%;
+    }
     .form-containerer{
         margin: auto 5%;
     }
+
     .tap-box{
         width: 300px;
         overflow:auto;
@@ -621,6 +648,18 @@ display: block;
         animation-iteration-count: 0;
         animation-timing-function: ease 0s;
     }
+    .close-icon {
+        position: absolute;
+        top: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 1;
+     border: 1px solid black;
+     padding: 1% 2.5%;
+      }
+      .fa-x:hover {
+        opacity: 1;
+      }
     @keyframes submax{
         0%{transform:scale(1);}
         100%{transform:scale(1);}

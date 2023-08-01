@@ -4,7 +4,6 @@ const keyking = require(__dirname + "/API Keys.js")
 const https = require("https")
 const date = require(__dirname + "/date.js");
 const _ = require("lodash");
-const city = require(__dirname + "/junk.js");
 const firstBlog = require(__dirname + "/first-blog.js");
 const secondBlog = require(__dirname + "/second-blog.js");
 const thirdBlog = require(__dirname + "/third-blog.js");
@@ -28,7 +27,6 @@ const upload = multer({
     fileSize: 	2000000, // 2 Megabyte in bytes (1 kilobyte = 1024 bytes)
   },
 });
-console.log(firstBlog.title);
 const newBlog = [];
 const commentContainer = [];
 app.get("/", (request, response)=> {
