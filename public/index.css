@@ -80,6 +80,7 @@ overflow-x: hidden;
     padding: 10% 4%;
     margin: 0% 5%;
     width: 80%;
+    border-radius: 3%;
 }
 .rowcall{
     padding-top: 2%;
@@ -89,6 +90,7 @@ overflow-x: hidden;
 .conta:hover{
     color: white;
 }
+
 .flood{
     width: 100%;
     padding: 2% 1%;
@@ -541,6 +543,9 @@ cursor: pointer;
     border-radius: 5px;
     cursor: pointer;
   }
+  .cont:hover{
+    color: white;
+}
   
   /* Style the input when a file is selected */
   .image-file::after {
