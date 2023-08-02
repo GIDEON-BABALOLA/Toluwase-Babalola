@@ -112,36 +112,5 @@ maxlength="1001" autofocus="on" required></textarea>
 
     <%- include("partials/blog-footer.ejs") %>
 
- <script>
-  function player(){
-    const compose = new Audio("audio/compose.mp3");
-    compose.play();
-  }
-    const textcontain = document.querySelector(".tap-box");
-    const countNum = document.querySelector(".counter");
-    const countMan = document.querySelector(".content")
-    textcontain.addEventListener("input", count);
-  function count(){
-    const number = textcontain.value.length;
-    countNum.innerHTML = number;
-    if( number <= 1000){
-        countMan.classList.remove("admob");
-    }
-    else{
-        countMan.classList.add("admob");
-    }
-  }
-  function updateLabel() {
-  const input = document.getElementById('file');
-  const label = document.querySelector('.file-text');
-
-  if (input.files && input.files.length > 0) {
-    label.textContent = 'Image Selected';
-  } else {
-    label.textContent = 'Select an Image';
-  }
-}
-
-
-  
+ <script src="/index.js">
  </script>

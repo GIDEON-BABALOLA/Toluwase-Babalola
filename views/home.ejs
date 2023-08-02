@@ -7,7 +7,7 @@
     <div class="row container-fluid " style="padding: 2% 10%; padding-bottom: 0%;">
 <div class="col-lg-6 col-md-12 col-sm-12" style="padding-right: 5%;">
   <img src="/images/Tolu.jpg" alt="" style="border-radius: 50%; " class="phoneo" width="30%" >
-  <span class="word powr" style="color: white;"></span>
+  <span class="word powr" style="color: white;" style="margin-top: 2%;"></span>
     <div style="margin-left: 0%; color: white; padding: 4% 0%;">
     <div style="font-size: 2.5rem;" class="name">Toluwase-Babalola</div>
     <div class="stap">Email:  <b class="staped">toluwasebabalola44[@]gmail[dot]com</b></div>
@@ -26,9 +26,11 @@ Visualization and Interpretation
     </div>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-12 mag" style="background-color: black; padding-left: 5%; margin-top: 0%;">
-    <img src="/images/Toluwase-Babalolar.png" alt=""  class="first-image" style="border-radius: 50%;
-    transform: scale(1.2); position: relative; bottom: 30px;">   
+    <img src="/images/Tolu.jpg" alt=""  class="first-image" style="
+    transform: scale(1.1); position: relative;  bottom: 10px; border-radius: 50%;">  
 </div>
+  </div>
+  <h5 class="word identify" style="color: white;" style="margin-top: 0%; padding-top: 0%; "></h5> 
  </section>
  <section clas="In-Between-section">
 <h4 style="color: #8f8f8f; text-align: center;  font-family: 'Clash Display', sans-serif; margin-top: 2%;">Experience and Membeships</h4>
@@ -80,7 +82,7 @@ temperature during storage thereby increasing sales.
       <div class="col-md-5">
         <img src="/images/maternal blood.png" class="img-fluid rounded-start" alt="...">
       </div>
-      <div class="col-md-7" style="padding: 6% 2%;">
+      <div class="col-md-7" style="padding: 4% 2%;">
         <div class="card-body">
           <h5 class="card-title">Maternal Systolic blood pressure prediction using a ML model</h5>
           <p class="card-text">
@@ -218,60 +220,13 @@ temperature during storage thereby increasing sales.
               
                   </div>
  </section>
- <span style="margin-left: 4%; color:#8f8f8f"><span class="">Get In Touch_</span> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+ <script src="/index.js"></script>
+ <span style="margin-left: 4%; color:#8f8f8f"><span class="getout">Get In Touch_</span> 
     <a href="https://twitter.com/thBabs" target="_blank"><i class="fa-brands fa-twitter fa-xl pricer pricee"></i></a> 
    <a href=" http://github.com/xbabs" target="_blank"><i class="fa-brands fa-github fa-xl pricer pricee"></i> </a>
    <a href="https://www.linkedin.com/in/toluwasebabalola" target="_blank"><i class="fa-brands fa-linkedin fa-xl pricer pricee"></i></a>
     <a href="mailto:toluwasebabalola44@gmail.com" target="_blank"><i class="fa-solid fa-envelope fa-xl pricer pricee"></i></a>
 </span>
-<script>
-    var words = ["Data Scientist", "AI Engineer", "Aeronautics Engineer"],
-      part,
-      i = 0,
-      offset = 0,
-      len = words.length,
-      forwards = true,
-      skip_count = 0,
-      skip_delay = 15,
-      speed = 70;
-    var wordflick = function () {
-      setInterval(function () {
-        if (forwards) {
-          if (offset >= words[i].length) {
-            ++skip_count;
-            if (skip_count == skip_delay) {
-              forwards = false;
-              skip_count = 0;
-            }
-          }
-        }
-        else {
-          if (offset == 0) {
-            forwards = true;
-            i++;
-            offset = 0;
-            if (i >= len) {
-              i = 0;
-            }
-          }
-        }
-        part = words[i].substr(0, offset);
-        if (skip_count == 0) {
-          if (forwards) {
-            offset++;
-          }
-          else {
-            offset--;
-          }
-        }
-        $('.word').text(part);
-      },speed);
-    };
-    $(document).ready(function () {
-      wordflick();
-    });
-
-</script>
-
     <%- include("partials/footers.ejs") %>
     

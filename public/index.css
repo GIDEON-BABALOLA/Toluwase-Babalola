@@ -113,7 +113,7 @@ padding: 4% 1%;
 .navbar-nav{
     padding: 1% 20%;
     padding-bottom: 0%;
-   margin-right: 20%;
+   margin-right: 25%;
 }
 
 .inpot:checked+p {
@@ -319,6 +319,15 @@ a{
 .gogo{
    transform: scale(0.5);
 }
+.first-image{
+    padding-top: 4%;
+    margin-top: 6%;
+    width: 62%;
+  border: 0.5px solid black;
+  box-shadow: 5px 0 10px 5px black;
+  border-radius: 4%;
+  
+}
 .stap{
     color: #8f8f8f;
    font-family: 'Clash Display', sans-serif;
@@ -417,9 +426,19 @@ article{
     .podcast{
         display: none;
     }
+    .mage{
+        background-image: url("./images/told.jpg");
+        background-position: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 1.5%;
+    }
     .skill{
         --tw-bg-opacity: 1;
     background-color: rgb(248 248 248/var(--tw-bg-opacity));
+    }
+    .calad{
+        display: none;
     }
 .mag{
     --tw-bg-opacity: 1;
@@ -456,6 +475,89 @@ cursor: pointer;
 .pricee:hover{
     color: #000;
 }
+.image-file-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* This hides any overflow from the input */
+  }
+  .image-file-wrapper:hover{
+    background-color: black;
+  } 
+  
+  .image-file-label {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 5px 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex; /* To align the camera icon and text horizontally */
+    align-items: center; /* To vertically center the content */
+  }
+  
+  .image-file-label:hover{
+    background-color: black;
+    color: white;
+  }
+  
+  .image-file {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  .identify{
+    display: inline-flex;
+    margin-left: 57%;
+    /* margin-top: 0%;
+    font-family: 'Clash Display', sans-serif;
+    position: relative;
+    bottom: 20px;
+    font-size: 1.4rem; */
+    display: inline-flex;
+    position: relative;
+    bottom: 20px;
+
+  }
+  
+  .camera-icon {
+    margin-right: 5px;
+  }
+  
+  /* Hide the default "Choose File" button and "No file chosen" text */
+  .image-file::-webkit-file-upload-button {
+    display: none;
+  }
+  .image-file::before {
+    content: 'Select an Image';
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style the input when a file is selected */
+  .image-file::after {
+    content: 'File Selected';
+    display: block;
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  .article-post{
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
 
 @keyframes shake{
     from{transform: translateX(-50px);}
@@ -486,6 +588,9 @@ cursor: pointer;
        
         padding-right: 10%;
     }
+    .identify{
+        display: none;
+    }
     .accomplishment{
         margin-left: 2%;
     }
@@ -514,7 +619,7 @@ cursor: pointer;
         margin: 0% 15%;
      }
      .box{
-        display: none;
+        display: inline-block;
     }
 }
 /*Iphone, pixel and samsung*/
@@ -528,6 +633,9 @@ cursor: pointer;
     }
     .nav-link{
         color: white;
+    }
+    .identify{
+        display: none;
     }
     .iphone-12-fix{
         display: flex; 
@@ -564,16 +672,6 @@ cursor: pointer;
     .submax{
         margin: 0% 10%;
     }
-    .offcanvas {
-     max-width: 300px; /* Adjust this value to control the width of the offcanvas */
-      padding-top: 70px;
-      padding-bottom: 70px; /* Add padding to the offcanvas for spacing */
-        background-color: white; 
-       /* Optional: Add a background color for the offcanvas */
-      }
-      .offcanvas-body{
-      width: 100%;
-      }
     @keyframes submax{
         0%{transform:scale(1);}
         100%{transform:scale(1);}
@@ -590,8 +688,21 @@ cursor: pointer;
         display: block;
         margin-top: 10%;
     }
+    .offcanvas {
+        max-width: 300px; /* Adjust this value to control the width of the offcanvas */
+         padding-top: 70px;
+         padding-bottom: 70px; /* Add padding to the offcanvas for spacing */
+           background-color: white; 
+          /* Optional: Add a background color for the offcanvas */
+         }
+         .offcanvas-body{
+         width: 100%;
+         }
     .form-containerer{
         margin: auto 5%;
+    }
+    .powr{
+        display: inline-flex;
     }
 
     .tap-box{
