@@ -78,29 +78,58 @@
                 <p class="blog-post-meta"><%= element.userDate %> by <span href="#"  style="color: #8f8f8f;"> <%= element.userName%>
                 </span></p><p> <span class="contained"><%= element.userContent  %> 
                      </span>
-                     <a href="/posts/<%= element.userTitle %>" style="color: #8f8f8f;"><%= element.sender %> </a>   
+                     <a href="/posts/<%= element.userTitle %>" style="color: #8f8f8f;"><%= element.sender %> </a>  
+                     <p class="">
+                      <i class="fa-regular fa-comment share-group"></i>
+                      <i class="fa-regular fa-share-from-square share-group"></i>
+                    <i class="fa-regular fa-heart share-group"></i>
+                     
+                     </p> 
+                    <hr>
       <% }) %>
+   
       </article>
       <article class="blog-post">
         <h2 class="blog-post-title mb-1" style="font-family:  'Clash Display', sans-serif;"><%= firstT%></h2>
         <p class="blog-post-meta">July 13, 2023 by <span href="#"  style="color: #8f8f8f;">Toluwase-Babalola</span></p>
 
-        <p> <%=firstC %></p>
+        <p class="contained"> <%=firstC %>
+      </p><span class="">
+      <i class="fa-regular fa-comment share-group"></i>
+      <i class="fa-regular fa-share-from-square share-group"></i>
+    <i class="fa-regular fa-heart share-group"></i>
+    </span>
+      <span><a href="/latest/baskethball" style="color: #8f8f8f;"  target="_blank">Read more</a>
+      </span>
         <hr>
-        <!-- <p></p> -->
+    
       </article>
 
       <article class="blog-post">
         <h2 class="blog-post-title mb-1"><%= secondT%></h2>
         <p class="blog-post-meta">July 5, 2023 by <span href="#" style="color: #8f8f8f;">Toluwase-Babalola</span></p>
-<p><%= secondC%></p>
+<p class="contained"><%= secondC%>  </p>
+<span class="">
+  <i class="fa-regular fa-comment share-group"></i>
+  <i class="fa-regular fa-share-from-square share-group"></i>
+<i class="fa-regular fa-heart share-group"></i>
+</span>
+<span><a href="/posts/" style="color: #8f8f8f;"  target="_blank">Read more</a>
+</span>
 <hr>
       </article>
 
       <article class="blog-post">
         <h2 class="blog-post-title mb-1"><%= thirdT%></h2>
         <p class="blog-post-meta">December 14, 2020 by <span href="#"  style="color: #8f8f8f;">Toluwase-Babalola</a></span>
-<p><%= thirdC %>   </p>
+<p class="contained"><%= thirdC %>  </p>
+<span class="">
+  <i class="fa-regular fa-comment share-group"></i>
+  <i class="fa-regular fa-share-from-square share-group"></i>
+<i class="fa-regular fa-heart share-group"></i>
+</span>
+<span><a href="/latest/stock" style="color: #8f8f8f;" target="_blank">Read more</a>
+</span>
 <hr>
       </article>
     </div>
@@ -152,7 +181,7 @@ $(document).ready(function(){
   
   $('.contained').each(function (f) {
 
-      var newstr = $(this).text().substring(0,500);
+      var newstr = $(this).text().substring(0,550);
       $(this).text(newstr);
 
     });
@@ -170,4 +199,3 @@ document.querySelector(".dycalender-target-date").setAttribute("class", "dycalen
 </html>
 
     <%- include("partials/last-footer.ejs") %>
-    

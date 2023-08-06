@@ -322,12 +322,8 @@ a{
    transform: scale(0.5);
 }
 .first-image{
-    padding-top: 4%;
-    margin-top: 6%;
-    width: 62%;
+    width: 70%;
   border: 0.5px solid black;
-  box-shadow: 5px 0 10px 5px black;
-  border-radius: 4%;
   
 }
 .stap{
@@ -466,10 +462,7 @@ article{
 .phoner{
 padding: 10% 1%;
 cursor: pointer;
-}
-.phoner:hover{
-    background-color: white;
-}
+}  
 .pricer{
     color: #000;
 }
@@ -512,7 +505,7 @@ cursor: pointer;
     cursor: pointer;
   }
   .identify{
-    display: inline-flex;
+    display: none;
     margin-left: 57%;
     /* margin-top: 0%;
     font-family: 'Clash Display', sans-serif;
@@ -545,6 +538,15 @@ cursor: pointer;
   }
   .cont:hover{
     color: white;
+}
+.share-group{
+    display: flex;
+    align-items:baseline;
+    justify-items:baseline;
+    padding: 1% 4%;
+}
+.why:hover{
+    color: black;
 }
   
   /* Style the input when a file is selected */
@@ -694,7 +696,7 @@ cursor: pointer;
         margin-top: 10%;
     }
     .offcanvas {
-        max-width: 300px; /* Adjust this value to control the width of the offcanvas */
+        max-width: 370px; /* Adjust this value to control the width of the offcanvas */
          padding-top: 70px;
          padding-bottom: 70px; /* Add padding to the offcanvas for spacing */
            background-color: white; 
