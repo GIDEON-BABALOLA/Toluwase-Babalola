@@ -3,6 +3,39 @@
     background: #8f8f8f;
     color:#fff;
 }
+/* Add your preferred styles for the blog content here */
+
+.share-container {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+  }
+  
+  .share-link {
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .share-options {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1;
+ 
+  }
+  
+  .show {
+    display: block;
+  }
+  
 #dycalendar{
     width: 100%;
     padding: 20px 20px 0;
@@ -520,6 +553,11 @@ cursor: pointer;
   
   .camera-icon {
     margin-right: 5px;
+  }
+  .blog-post{
+    background-color: #1d1d1d; color: white; padding: 4% 4%;
+    margin-bottom: 2%;
+    border-radius: 2%;
   }
   
   /* Hide the default "Choose File" button and "No file chosen" text */

@@ -25,14 +25,16 @@
 
   <div class="row mb-2">
     <div class="col-md-6">
-      <h5 style="text-align:center;font-family: 'Clash Display', sans-serif;" class="price"><%= dataman %> </h5>
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <h5 style="text-align:center;font-family: 'Clash Display', sans-serif;" class="price"
+      style="color: white;"><%= dataman %> </h5>
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      style="background-color:  #1d1d1d; color: white;">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-dark" name="first">Computer Vision</strong>
+          <strong class="d-inline-block mb-2" name="first">Computer Vision</strong>
           <h6 class="mb-0" style="font-family:  'Clash Display', sans-serif;">
             AI Basketball Referee System with Computer Vision
           </h6>
-          <div class="mb-1 text-muted">July 2023</div>
+          <div class="mb-1 " style="color:#8f8f8f">July 2023</div>
           <p class="card-text mb-auto">
             Just concluded an interesting 1-hour session with Ayush Pai, Matt Brown and Akmal Chaudhri, Esq. on 𝐚𝐧 𝐀𝐈 𝐁𝐚𝐬𝐤𝐞𝐭𝐛𝐚𝐥𝐥 𝐑𝐞𝐟𝐞𝐫𝐞𝐞 𝐒𝐲𝐬𝐭𝐞𝐦 𝐰𝐢𝐭𝐡 𝐂𝐨𝐦𝐩𝐮𝐭𝐞𝐫 𝐕𝐢𝐬𝐢𝐨𝐧. The SingleStore DB was used as the database platform.Read More
           </p>
@@ -72,20 +74,30 @@
           style="margin-left: 100%;" onclick="player()">Compose</button>
         </form>
       </div>
-      <article>
+      <article class="">
           <% content.forEach(function(element){ %>
+            <div class="blog-post">
         <h2 class="blog-post-title mb-1 format"><%= element.userTitle %></h2>
                 <p class="blog-post-meta"><%= element.userDate %> by <span href="#"  style="color: #8f8f8f;"> <%= element.userName%>
                 </span></p><p> <span class="contained"><%= element.userContent  %> 
                      </span>
                      <a href="/posts/<%= element.userTitle %>" style="color: #8f8f8f;"><%= element.sender %> </a>  
-                     <p class="">
+                     </p>
                       <i class="fa-regular fa-comment share-group"></i>
-                      <i class="fa-regular fa-share-from-square share-group"></i>
                     <i class="fa-regular fa-heart share-group"></i>
+                    <div class="share-container">
+                      <button class="share-link" onclick="toggleShareOptions()"><i class="fa-regular fa-share-from-square share-group">
+                      </i></button>
+                      <div class="share-options" id="shareOptions">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=your_blog_post_url" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                        <a href="https://api.whatsapp.com/send?text=your_blog_post_url" target="_blank">WhatsApp</a>
+                      </div>
+                    </div>
                      
-                     </p> 
+                 
                     <hr>
+                    </div>
       <% }) %>
    
       </article>
@@ -96,8 +108,23 @@
         <p class="contained"> <%=firstC %>
       </p><span class="">
       <i class="fa-regular fa-comment share-group"></i>
-      <i class="fa-regular fa-share-from-square share-group"></i>
+ 
     <i class="fa-regular fa-heart share-group"></i>
+    
+
+<div class="share-container">
+  <button class="share-link" onclick="toggleShareOptions1()"><i class="fa-regular fa-share-from-square share-group">
+  </i></button>
+  <div class="share-options" id="shareOptions1">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<%= firstT %>" target="_blank">
+      <i class="fab fa-facebook-square"><span style="font-size: 0.8rem;">facebook</span></i></a>
+    <a href="https://telegram.me/share/url?url=<%=firstT%>"  target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://api.whatsapp.com/send?text=<%= firstT %>" target="_blank">
+      <i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
     </span>
       <span><a href="/latest/baskethball" style="color: #8f8f8f;"  target="_blank">Read more</a>
       </span>
@@ -108,11 +135,18 @@
       <article class="blog-post">
         <h2 class="blog-post-title mb-1"><%= secondT%></h2>
         <p class="blog-post-meta">July 5, 2023 by <span href="#" style="color: #8f8f8f;">Toluwase-Babalola</span></p>
-<p class="contained"><%= secondC%>  </p>
-<span class="">
+<p class="contained"><%= secondC%> </p>
   <i class="fa-regular fa-comment share-group"></i>
-  <i class="fa-regular fa-share-from-square share-group"></i>
 <i class="fa-regular fa-heart share-group"></i>
+<div class="share-container">
+  <button class="share-link" onclick="toggleShareOptions2()"><i class="fa-regular fa-share-from-square share-group">
+  </i></button>
+  <div class="share-options" id="shareOptions2">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=your_blog_post_url" target="_blank"></a>
+    <a href="https://www.instagram.com" target="_blank"></a>
+    <a href="https://api.whatsapp.com/send?text=your_blog_post_url" target="_blank"></a>
+  </div>
+</div>
 </span>
 <span><a href="/posts/" style="color: #8f8f8f;"  target="_blank">Read more</a>
 </span>
@@ -124,9 +158,17 @@
         <p class="blog-post-meta">December 14, 2020 by <span href="#"  style="color: #8f8f8f;">Toluwase-Babalola</a></span>
 <p class="contained"><%= thirdC %>  </p>
 <span class="">
-  <i class="fa-regular fa-comment share-group"></i>
-  <i class="fa-regular fa-share-from-square share-group"></i>
+<i class="fa-regular fa-comment share-group"></i>
 <i class="fa-regular fa-heart share-group"></i>
+<div class="share-container">
+  <button class="share-link" onclick="toggleShareOptions3()"><i class="fa-regular fa-share-from-square share-group">
+  </i></button>
+  <div class="share-options" id="shareOptions3">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=your_blog_post_url" target="_blank"></a>
+    <a href="https://www.instagram.com" target="_blank"></a>
+    <a href="https://api.whatsapp.com/send?text=your_blog_post_url" target="_blank"></a>
+  </div>
+</div>
 </span>
 <span><a href="/latest/stock" style="color: #8f8f8f;" target="_blank">Read more</a>
 </span>
@@ -194,6 +236,22 @@ $(document).ready(function(){
     })
 document.querySelector(".dycalender-month-container").setAttribute("class", "dycalendar-month-container");
 document.querySelector(".dycalender-target-date").setAttribute("class", "dycalendar-target-date");  
+    function toggleShareOptions() {
+      const shareOptions = document.getElementById('shareOptions');
+      shareOptions.classList.toggle('show');
+    }
+    function toggleShareOptions1() {
+      const shareOptions1 = document.getElementById('shareOptions1');
+      shareOptions1.classList.toggle('show');
+    }
+    function toggleShareOptions2() {
+      const shareOptions2 = document.getElementById('shareOptions2');
+      shareOptions2.classList.toggle('show');
+    }
+    function toggleShareOptions3() {
+      const shareOptions3 = document.getElementById('shareOptions3');
+      shareOptions3.classList.toggle('show');
+    }
 </script>
   </body>
 </html>
