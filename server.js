@@ -7,6 +7,7 @@ const _ = require("lodash");
 const firstBlog = require(__dirname + "/first-blog.js");
 const secondBlog = require(__dirname + "/second-blog.js");
 const thirdBlog = require(__dirname + "/third-blog.js");
+// const mongoose = require("mongoose");
 const app = express();
 const path = require("path");
 app.use(bodyParser.urlencoded({extended: true}));

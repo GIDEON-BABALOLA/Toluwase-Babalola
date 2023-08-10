@@ -1,17 +1,15 @@
 <%- include("partials/headers.ejs") %>
 <title>Toluwase-Babalola | Data Scientist</title>
+</head>
 <body>
-    <%- include("partials/second-headers.ejs") %>
-   </head>
-  <body>
-    
+    <%- include("partials/second-headers.ejs") %>    
 <div class="container">
   <div class="nav-scroller py-1 mb-2">
   </div>
 </div>
 <main class="container" style="padding-top: 7%;" class="dapar">
   
-  <div class="p-4 p-md-5 mb-4  mage">
+  <div class="p-4 p-md-5 mb-5  mage">
     <div class="col-md-6 px-0">
       <h1 class="display-3 " 
       style="font-family: 'Clash Display', sans-serif; color: white;
@@ -47,11 +45,12 @@
     </div>
     
     <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style="background-color: #1d1d1d;
+      color: white;">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-dark" name="second">Artificial Intelligence</strong>
+          <strong class="d-inline-block mb-2 text-white" name="second">Artificial Intelligence</strong>
           <h5 class="mb-0" style="font-family:  'Clash Display', sans-serif;;">Improving the estimated stock level percentage!</h5>
-          <div class="mb-1 text-muted">June 2023</div>
+          <div class="mb-1 " style="color:#8f8f8f;">June 2023</div>
           <p class="mb-auto">
             By leveraging customer data related to products, sales, payment methods, and memberships, businesses can make data-driven decisions to optimize their stock levels.Read More...
           </p>
@@ -67,9 +66,9 @@
   <div class="row g-5">
     <div class="col-md-8">
       <div class="pb-4 mb-5 fst-normal" style="display: flex">
-        <span class="" style="font-weight: 500; font-size: 1.2rem;">
+        <span class="okay" style="font-weight: 500; font-size: 1.2rem;">
         Lets Blog</span> 
-        <form action="/blog/compose">
+        <form action="/blog/compose" class="okay">
           <button type="submit"class="position-sticky btn btn-lg btn-dark "
           style="margin-left: 100%;" onclick="player()">Compose</button>
         </form>
@@ -179,9 +178,12 @@
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
         <div class="p-4 mb-3 bg-light rounded"> 
-          <h4 class="fst-normal">Weather </h4>
+          <h4 class="fst-normal" style="font-family: 'Clash Display', sans-serif;">What's on your mind</h4>
           <p class="mb-0">
-          
+            <form action="/blog/compose">
+              <button type="submit"class="position-sticky btn btn-lg btn-dark "
+               onclick="player()">Compose</button>
+            </form>
          
           </p>
         </div>
@@ -202,7 +204,26 @@
         <div class="p-4">
           <h4 class="fst-normal">Linkedin  <a href="https://www.linkedin.com/in/toluwasebabalola"
              target="_blank"><i class="fa-brands bloge fa-linkedin fa-xxl"></i>
-          </a></h4>
+          </a></h4><span style="font-family: 'Clash Display', sans-serif;;">
+          Check out some of my other exciting content on my linkedin page
+          </span>
+          <div class="p-1 bg-light">
+            <h4 class="fst-italic">Trending</h4>
+            <ol class="list-unstyled mb-0" >
+              <li><a href="#" style="color: #1d1d1d;">#Machine Learning</a></li>
+              <li><a href="#" style="color: #1d1d1d;">#Artificial Intelligence</a></li>
+              <li><a href="#" style="color: #1d1d1d;">#MLOps</a></li>
+              <li><a href="#" style="color: #1d1d1d;">#Deep Learning</a></li>
+              <li><a href="#" style="color: #1d1d1d;">#Tensorflow</a></li>
+              <li><a href="#" style="color: #1d1d1d;">#keras</a></li>
+              <li><a href="#" style="color: #1d1d1d;">#Data Science</a></li>
+              <li><a href="#" style="color: #1d1d1d;">#Software Engineering</a></li>
+              <li><a href="#" style="color: #1d1d1d;">#Python</a></li>
+              <li><a href="#" style="color: #1d1d1d;">#Neural Networks</a></li>
+              <li><a href="#" style="color: #1d1d1d;">#Self Driving Cars</a></li>
+              <li><a href="#" style="color: #1d1d1d;">#Robotics</a></li>
+            </ol>
+          </div>
         </div>
       </div>
     </div>
