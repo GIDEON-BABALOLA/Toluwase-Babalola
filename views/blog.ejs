@@ -74,7 +74,7 @@
         </form>
       </div>
       <article class="">
-          <% content.forEach(function(element){ %>
+          <% content.forEach(function(element, index){ %>
             <div class="blog-post">
         <h2 class="blog-post-title mb-1 format"><%= element.userTitle %></h2>
                 <p class="blog-post-meta"><%= element.userDate %> by <span href="#"  style="color: #8f8f8f;"> <%= element.userName%>
@@ -84,15 +84,7 @@
                      </p>
                       <i class="fa-regular fa-comment share-group"></i>
                     <i class="fa-regular fa-heart share-group"></i>
-                    <div class="share-container">
-                      <button class="share-link" onclick="toggleShareOptions()"><i class="fa-regular fa-share-from-square share-group">
-                      </i></button>
-                      <div class="share-options" id="shareOptions">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=your_blog_post_url" target="_blank">Facebook</a>
-                        <a href="https://www.instagram.com" target="_blank">Instagram</a>
-                        <a href="https://api.whatsapp.com/send?text=your_blog_post_url" target="_blank">WhatsApp</a>
-                      </div>
-                    </div>
+                 
                      
                  
                     <hr>

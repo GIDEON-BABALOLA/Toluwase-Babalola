@@ -125,29 +125,43 @@ app.post("/blog", (request, response, next)=>{
   }
   })
   app.get("/posts/:value", (request, response) => {
-    const loader = _.lowerCase(request.params.value);
-    const loadman = _.replace(loader, /\s+/g, '-');
-    console.log(loadman)
-    if(request.params.value === loadman){
-      blogModel.find({userTitle : request.params.value})
-      .then((data)=>{
-        console.log(data)
+    blogModel.find({userTitle : request.params.value})
+    .then((data)=>{
+      const loader = _.lowerCase(data);
+      const loadman = _.replace(loader, /\s+/g, '-');
+      console.log(loadman)
+      if(request.params.value === loadman){
         response.render("post", {contentName:data[0].userName,  contentTitle:data[0].userTitle,
           contentContent:data[0].userContent, contentTime: data[0].userDate, contentURL:data[0].sender, contentImage: data[0].picture});
-        })
       }
-    else{
-      blogModel.find({userTitle : request.params.value})
-      .then((data)=>{
-        console.log(data)
-        console.log(data[0].userName)
+      else if(request.params.value === data[0].userTitle){
         response.render("post", {contentName:data[0].userName,  contentTitle:data[0].userTitle,
           contentContent:data[0].userContent, contentTime: data[0].userDate, contentURL:data[0].sender, contentImage: data[0].picture});
-      })
-      .catch((error)=>{
-        console.log("Error In Rendering Individual Posts")
-      })
-    }
+      }
+    })
+    // const loader = _.lowerCase(request.params.value);
+    // const loadman = _.replace(loader, /\s+/g, '-');
+    // console.log(loadman)
+    // if(request.params.value === loadman){
+    //   blogModel.find({userTitle : request.params.value})
+    //   .then((data)=>{
+    //     console.log(data)
+    //     response.render("post", {contentName:data[0].userName,  contentTitle:data[0].userTitle,
+    //       contentContent:data[0].userContent, contentTime: data[0].userDate, contentURL:data[0].sender, contentImage: data[0].picture});
+    //     })
+    //   }
+    // else{
+    //   blogModel.find({userTitle : request.params.value})
+    //   .then((data)=>{
+    //     console.log(data)
+    //     console.log(data[0].userName)
+    //     response.render("post", {contentName:data[0].userName,  contentTitle:data[0].userTitle,
+    //       contentContent:data[0].userContent, contentTime: data[0].userDate, contentURL:data[0].sender, contentImage: data[0].picture});
+    //   })
+    //   .catch((error)=>{
+    //     console.log("Error In Rendering Individual Posts")
+    //   })
+    // }
   });
 app.post("/contact", (request, response)=> {
     const firstName = request.body.firstname;

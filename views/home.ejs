@@ -3,10 +3,11 @@
 </head>
 <body>
  <%- include("partials/second-headers.ejs") %>
- <section class="first-section" style="padding-top: 4%; background-color: black;">
+ <section class="first-section" style="padding-top: 4%; background-color: black; 
+ clip-path: polygon(0, 0, 100% 0, 100% 100%, 73% 94%, 0 100%);">
     <div class="row container-fluid updated" style="padding-bottom: 0%;">
 <div class="col-lg-6 col-md-6 col-sm-12" style="padding-right: 5%; margin-right: 0%;">
-  <img src="/images/TOLUMAGE2.png" alt="" style="border-radius: 50%; " class="phoneo" width="30%" >
+  <img src="/images/TOLUMAGE2.png" alt="" style="border-radius: 50%; padding-top: 4%; " class="phoneo" width="30%" >
   <span class="word powr" style="color: white;" style="margin-top: 2%;"></span>
     <div style="margin-left: 0%; color: white; padding: 4% 0%;">
     <div style="font-size: 2.5rem;" class="name">Toluwase-Babalola</div>
@@ -31,7 +32,10 @@ Visualization and Interpretation
 <p>
   <span style="color: white; margin-left: 4%; margin-top: 4%;" class="word fila"></span>
 </p>
-<button class="btn-light btn botman" style="margin-left: 6%;">Download CV</button>
+<a href="/Toluwase Babalola CV.pdf" download="Toluwase Babalola CV.pdf">
+<button class="btn-dark btn botman" style="margin-left: 6%;" id="downloadButton">
+ Download CV</button>
+ </a>
 </div>
   </div>
  </section>
