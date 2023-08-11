@@ -7,12 +7,27 @@ const _ = require("lodash");
 const firstBlog = require(__dirname + "/first-blog.js");
 const secondBlog = require(__dirname + "/second-blog.js");
 const thirdBlog = require(__dirname + "/third-blog.js");
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const app = express();
 const path = require("path");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
+const url = keyking.keystore.url;
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology:true }
+  )
+  const blogSchema = new mongoose.Schema({
+    userName : String,
+    userTitle : String,
+    userContent : String,
+    userDate:String,
+    sender: String,
+    picture: String,
+    timestamp: { type: Date, default: Date.now }
+  })
+const blogModel = mongoose.model("blogContent", blogSchema)
 const multer = require('multer');
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -28,8 +43,6 @@ const upload = multer({
     fileSize: 	2000000, // 2 Megabyte in bytes (1 kilobyte = 1024 bytes)
   },
 });
-const newBlog = [];
-const commentContainer = [];
 app.get("/", (request, response)=> {
     const about = "Welcome to my portfolio website! As a data scientist with expertise in machine learning, I aim to explore my skills, experience, and projects in the field of data science and how real-world problems are solved. With 1+ years of experience in the industry, I have worked on a wide range of projects that have enhanced my skills in statistical analysis and predictive modeling for production. My passion for solving complex problems using data-driven insights drives me to excel in this field. I’m open to collaborate on open-source projects on model development, building and deployment for production";
     response.render("home" , { apple: about});
@@ -50,9 +63,15 @@ app.get("/blog", (request, response)=>{
   const secondContent = secondBlog.content;
   const thirdTitle = thirdBlog.title;
   const thirdContent = thirdBlog.content;
-  console.log(newBlog);
-  response.render("blog",  {dataman:date.universalDate(), firstT: firstTitle, firstC: firstContent, secondT: secondTitle,
-  secondC:secondContent, thirdT: thirdTitle, thirdC : thirdContent, content:newBlog, blogComment : commentContainer});
+  blogModel.find().sort({ timestamp: -1 })
+  .then((data)=>{
+    console.log(data)
+    response.render("blog",  {dataman:date.universalDate(), firstT: firstTitle, firstC: firstContent, secondT: secondTitle,
+      secondC:secondContent, thirdT: thirdTitle, thirdC : thirdContent, content : data});
+  })
+  .catch((error)=>{
+    console.log("Error in Finding the values of the blog", error)
+  })
   })
   app.get("/blog/compose", (request, response)=>{
     response.render("compose", {dataman:date.universalDate()});
@@ -87,19 +106,18 @@ app.post("/blog", (request, response, next)=>{
     sender: newSend,
     picture: cleanedImagePath
   }
-  const blogComment = request.body.addition;
-  newBlog.unshift(userData);
-  commentContainer.unshift(blogComment);
+  const blogAdd = new blogModel(userData)
+  blogAdd.save()
   response.redirect("/blog");
   })
 });
   app.get ("/latest/:value", (request, response)=>{
     if(request.params.value === "baskethball"){
-      response.render("latest", { blogComment : commentContainer,  contentTitle:firstBlog.title,
+      response.render("latest", {  contentTitle:firstBlog.title,
         contentContent:firstBlog.content,});
       }
   else if(request.params.value === "stock"){
-    response.render("latest", { blogComment : commentContainer,  contentTitle:thirdBlog.title,
+    response.render("latest", { contentTitle:thirdBlog.title,
       contentContent:thirdBlog.content})
   }
   else{
@@ -107,17 +125,28 @@ app.post("/blog", (request, response, next)=>{
   }
   })
   app.get("/posts/:value", (request, response) => {
-    const loader = _.lowerCase(newBlog[0].userTitle);
+    const loader = _.lowerCase(request.params.value);
     const loadman = _.replace(loader, /\s+/g, '-');
-    console.log(request.params.value); //TEST
-    console.log(loadman); //test
+    console.log(loadman)
     if(request.params.value === loadman){
-      response.render("post", {contentName:newBlog[0].userName, blogComment : commentContainer,  contentTitle:newBlog[0].userTitle,
-      contentContent:newBlog[0].userContent, contentTime: newBlog[0].userDate, contentURL:newBlog[0].sender, contentImage: newBlog[0].picture});
-    }
+      blogModel.find({userTitle : request.params.value})
+      .then((data)=>{
+        console.log(data)
+        response.render("post", {contentName:data[0].userName,  contentTitle:data[0].userTitle,
+          contentContent:data[0].userContent, contentTime: data[0].userDate, contentURL:data[0].sender, contentImage: data[0].picture});
+        })
+      }
     else{
-      response.render("post", {contentName:newBlog[0].userName, blogComment : commentContainer,  contentTitle:newBlog[0].userTitle,
-        contentContent:newBlog[0].userContent, contentTime: newBlog[0].userDate, contentURL:newBlog[0].sender, contentImage: newBlog[0].picture});
+      blogModel.find({userTitle : request.params.value})
+      .then((data)=>{
+        console.log(data)
+        console.log(data[0].userName)
+        response.render("post", {contentName:data[0].userName,  contentTitle:data[0].userTitle,
+          contentContent:data[0].userContent, contentTime: data[0].userDate, contentURL:data[0].sender, contentImage: data[0].picture});
+      })
+      .catch((error)=>{
+        console.log("Error In Rendering Individual Posts")
+      })
     }
   });
 app.post("/contact", (request, response)=> {

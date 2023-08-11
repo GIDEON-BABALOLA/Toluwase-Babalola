@@ -505,6 +505,14 @@ article{
 .skiller{
     margin: 0% 1.5%;
 }
+.botman:hover{
+    background-color: #000;
+    color: white;
+}
+.fila{
+    font-size: 1.4rem;
+    font-family: 'Clash Display', sans-serif;;
+}
 .phoner{
 padding: 10% 1%;
 cursor: pointer;
@@ -762,6 +770,9 @@ cursor: pointer;
 @media (max-width: 767px){
     .nav-link{
       text-align: center;
+    }
+    .finaldate{
+        display: none;
     }
     .updated{
         padding: 0% 10%; 
