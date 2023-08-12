@@ -63,11 +63,22 @@ app.get("/blog", (request, response)=>{
   const secondContent = secondBlog.content;
   const thirdTitle = thirdBlog.title;
   const thirdContent = thirdBlog.content;
+  const loader1 = _.lowerCase(firstBlog.title);
+  const loadman1 = _.replace(loader1, /\s+/g, '-');
+       const loader2 = _.lowerCase(secondBlog.title);
+  const loadman2 = _.replace(loader2, /\s+/g, '-');
+       const loader3 = _.lowerCase(thirdBlog.title);
+  const loadman3 = _.replace(loader3, /\s+/g, '-');
+  const currentURL = request.protocol + '://' + request.get('host');
+  const urlWithLatest = _.trimEnd(currentURL, '/') + '/latest/';
+  const urlWithLatestP = _.trimEnd(currentURL, '/') + '/posts/';
+  console.log(currentURL)
   blogModel.find().sort({ timestamp: -1 })
   .then((data)=>{
-    console.log(data)
+    // console.log(data)
     response.render("blog",  {dataman:date.universalDate(), firstT: firstTitle, firstC: firstContent, secondT: secondTitle,
-      secondC:secondContent, thirdT: thirdTitle, thirdC : thirdContent, content : data});
+      secondC:secondContent, thirdT: thirdTitle, thirdC : thirdContent, content : data, doman : urlWithLatest, domane :urlWithLatestP
+      ,  first: loadman1, second : loadman2, third:  loadman3});
   })
   .catch((error)=>{
     console.log("Error in Finding the values of the blog", error)
@@ -112,11 +123,22 @@ app.post("/blog", (request, response, next)=>{
   })
 });
   app.get ("/latest/:value", (request, response)=>{
-    if(request.params.value === "baskethball"){
+    const loader1 = _.lowerCase(firstBlog.title);
+    const loadman1 = _.replace(loader1, /\s+/g, '-');
+         const loader2 = _.lowerCase(secondBlog.title);
+    const loadman2 = _.replace(loader2, /\s+/g, '-');
+         const loader3 = _.lowerCase(thirdBlog.title);
+    const loadman3 = _.replace(loader3, /\s+/g, '-');
+    if(request.params.value === loadman1){
       response.render("latest", {  contentTitle:firstBlog.title,
-        contentContent:firstBlog.content,});
+        contentContent:firstBlog.content});
       }
-  else if(request.params.value === "stock"){
+      else if (request.params.value === loadman2)
+      {
+        response.render("latest", {  contentTitle:secondBlog.title,
+          contentContent:secondBlog.content});
+        }
+  else if(request.params.value === loadman3){
     response.render("latest", { contentTitle:thirdBlog.title,
       contentContent:thirdBlog.content})
   }
@@ -125,11 +147,10 @@ app.post("/blog", (request, response, next)=>{
   }
   })
   app.get("/posts/:value", (request, response) => {
-    blogModel.find({userTitle : request.params.value})
+    const originalString = request.url
+    const loadman = _.replace(originalString, '/posts/', '');
+    blogModel.find({_id : loadman})
     .then((data)=>{
-      const loader = _.lowerCase(data);
-      const loadman = _.replace(loader, /\s+/g, '-');
-      console.log(loadman)
       if(request.params.value === loadman){
         response.render("post", {contentName:data[0].userName,  contentTitle:data[0].userTitle,
           contentContent:data[0].userContent, contentTime: data[0].userDate, contentURL:data[0].sender, contentImage: data[0].picture});

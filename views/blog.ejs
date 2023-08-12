@@ -80,17 +80,28 @@
                 <p class="blog-post-meta"><%= element.userDate %> by <span href="#"  style="color: #8f8f8f;"> <%= element.userName%>
                 </span></p><p> <span class="contained"><%= element.userContent  %> 
                      </span>
-                     <a href="/posts/<%= element.userTitle %>" style="color: #8f8f8f;"><%= element.sender %> </a>  
+                     <a href="/posts/<%= element._id %>" style="color: #8f8f8f;"><%= element.sender %> </a>  
                      </p>
-                      <i class="fa-regular fa-comment share-group"></i>
-                    <i class="fa-regular fa-heart share-group"></i>
-                 
-                     
-                 
+            
                     <hr>
+                    <div class="share-container">
+                      
+                      <button class="share-link got" onclick="golang(this)" data-id="<%= element._id %>">
+                        <i class="fa-regular fa-share-from-square share-group">
+                      </i></button>
+                      <div class="share-options" id="<%= element._id %>">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=<%=domane%><%= element._id %>" target="_blank">
+                          <i class="fab fa-facebook-square fa-lg"><span style="font-size: 0.8rem;"></span></i></a>
+                        <a href="https://telegram.me/share/url?url=<%=domane%><%= element._id %>"  target="_blank">
+                          <i class="fa-brands fa-telegram fab fa-lg"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?text=<%=domane%><%= element._id %>" target="_blank">
+                          <i class="fab fa-whatsapp fa-lg"></i></a>
+                      </div>
                     </div>
+                    </div>
+                    
       <% }) %>
-   
       </article>
       <article class="blog-post">
         <h2 class="blog-post-title mb-1" style="font-family:  'Clash Display', sans-serif;"><%= firstT%></h2>
@@ -98,26 +109,21 @@
 
         <p class="contained"> <%=firstC %>
       </p><span class="">
-      <i class="fa-regular fa-comment share-group"></i>
- 
-    <i class="fa-regular fa-heart share-group"></i>
-    
-
 <div class="share-container">
   <button class="share-link" onclick="toggleShareOptions1()"><i class="fa-regular fa-share-from-square share-group">
   </i></button>
   <div class="share-options" id="shareOptions1">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=<%= firstT %>" target="_blank">
-      <i class="fab fa-facebook-square"><span style="font-size: 0.8rem;">facebook</span></i></a>
-    <a href="https://telegram.me/share/url?url=<%=firstT%>"  target="_blank">
-      <i class="fab fa-instagram"></i>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<%=doman%><%= first %>" target="_blank">
+      <i class="fab fa-facebook-square fa-lg"><span style="font-size: 0.8rem;"></span></i></a>
+    <a href="https://telegram.me/share/url?url=<%=doman%><%=first%>"  target="_blank">
+      <i class="fa-brands fa-telegram fab fa-lg"></i>
     </a>
-    <a href="https://api.whatsapp.com/send?text=<%= firstT %>" target="_blank">
-      <i class="fab fa-whatsapp"></i></a>
+    <a href="https://api.whatsapp.com/send?text=<%=doman%><%=first %>" target="_blank">
+      <i class="fab fa-whatsapp fa-lg"></i></a>
   </div>
 </div>
     </span>
-      <span><a href="/latest/baskethball" style="color: #8f8f8f;"  target="_blank">Read more</a>
+      <span><a href="/latest/<%= first %>" style="color: #8f8f8f;"  target="_blank">Read more</a>
       </span>
         <hr>
     
@@ -127,19 +133,21 @@
         <h2 class="blog-post-title mb-1"><%= secondT%></h2>
         <p class="blog-post-meta">July 5, 2023 by <span href="#" style="color: #8f8f8f;">Toluwase-Babalola</span></p>
 <p class="contained"><%= secondC%> </p>
-  <i class="fa-regular fa-comment share-group"></i>
-<i class="fa-regular fa-heart share-group"></i>
 <div class="share-container">
   <button class="share-link" onclick="toggleShareOptions2()"><i class="fa-regular fa-share-from-square share-group">
   </i></button>
   <div class="share-options" id="shareOptions2">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=your_blog_post_url" target="_blank"></a>
-    <a href="https://www.instagram.com" target="_blank"></a>
-    <a href="https://api.whatsapp.com/send?text=your_blog_post_url" target="_blank"></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<%=doman%><%= second %>" target="_blank">
+      <i class="fab fa-facebook-square fa-lg"><span style="font-size: 0.8rem;"></span></i></a>
+    <a href="https://telegram.me/share/url?url=<%=doman%><%=second%>"  target="_blank">
+      <i class="fa-brands fa-telegram fab fa-lg"></i>
+    </a>
+    <a href="https://api.whatsapp.com/send?text=<%=doman%><%= second %>" target="_blank">
+      <i class="fab fa-whatsapp fa-lg"></i></a>
   </div>
 </div>
 </span>
-<span><a href="/posts/" style="color: #8f8f8f;"  target="_blank">Read more</a>
+<span><a href="/latest/<%= second %>" style="color: #8f8f8f;"  target="_blank">Read more</a>
 </span>
 <hr>
       </article>
@@ -149,19 +157,21 @@
         <p class="blog-post-meta">December 14, 2020 by <span href="#"  style="color: #8f8f8f;">Toluwase-Babalola</a></span>
 <p class="contained"><%= thirdC %>  </p>
 <span class="">
-<i class="fa-regular fa-comment share-group"></i>
-<i class="fa-regular fa-heart share-group"></i>
-<div class="share-container">
-  <button class="share-link" onclick="toggleShareOptions3()"><i class="fa-regular fa-share-from-square share-group">
-  </i></button>
-  <div class="share-options" id="shareOptions3">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=your_blog_post_url" target="_blank"></a>
-    <a href="https://www.instagram.com" target="_blank"></a>
-    <a href="https://api.whatsapp.com/send?text=your_blog_post_url" target="_blank"></a>
+  <div class="share-container">
+    <button class="share-link" onclick="toggleShareOptions3()"><i class="fa-regular fa-share-from-square share-group">
+    </i></button>
+    <div class="share-options" id="shareOptions3">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=<%=doman%><%= third %>" target="_blank">
+        <i class="fab fa-facebook-square fa-lg"><span style="font-size: 0.8rem;"></span></i></a>
+      <a href="https://telegram.me/share/url?url=<%=doman%><%=third%>"  target="_blank">
+        <i class="fa-brands fa-telegram fab fa-lg"></i>
+      </a>
+      <a href="https://api.whatsapp.com/send?text=<%=doman%><%= third %>" target="_blank">
+        <i class="fab fa-whatsapp fa-lg" ></i></a>
+    </div>
   </div>
-</div>
 </span>
-<span><a href="/latest/stock" style="color: #8f8f8f;" target="_blank">Read more</a>
+<span><a href="/latest/<%= third %>" style="color: #8f8f8f;" target="_blank">Read more</a>
 </span>
 <hr>
       </article>
@@ -248,11 +258,12 @@ $(document).ready(function(){
         prevnextbutton:"show"
     })
 document.querySelector(".dycalender-month-container").setAttribute("class", "dycalendar-month-container");
-document.querySelector(".dycalender-target-date").setAttribute("class", "dycalendar-target-date");  
-    function toggleShareOptions() {
-      const shareOptions = document.getElementById('shareOptions');
-      shareOptions.classList.toggle('show');
-    }
+document.querySelector(".dycalender-target-date").setAttribute("class", "dycalendar-target-date");
+function golang(buttonElement) {
+  const containerId = buttonElement.getAttribute('data-id');
+  const shareOptions = document.getElementById(containerId);
+  shareOptions.classList.toggle('show');
+}
     function toggleShareOptions1() {
       const shareOptions1 = document.getElementById('shareOptions1');
       shareOptions1.classList.toggle('show');

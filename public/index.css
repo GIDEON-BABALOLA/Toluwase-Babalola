@@ -473,8 +473,14 @@ article{
     .podcast{
         display: none;
     }
+    .fab{
+        color: #000;
+    }
+    .fab:hover{
+        color: #000;
+    }
     .mage{
-        background-image: url("./images/space.jpg");
+        background-image: url("./images/spark.jpg");
         background-position: auto;
         background-repeat: no-repeat;
         background-size: cover;
@@ -788,6 +794,9 @@ cursor: pointer;
     }
     .finaldate{
         display: none;
+    }
+    .mage{
+        margin-top: 6%;
     }
     .palace{
         display: block;
