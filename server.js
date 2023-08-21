@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const keyking = require(__dirname + "/API Keys.js")
@@ -13,7 +14,7 @@ const path = require("path");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
-const url = keyking.keystore.url;
+const url = process.env.URL;
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology:true }
@@ -56,6 +57,10 @@ app.get("/projects", (request, response)=>{
 app.get("/contact", (request, response)=>{
 response.render("contact", {dater:date.universalDate()})
 })
+console.log(process.env.API_KEY)
+console.log(process.env.ID)
+console.log(process.env.URL)
+
 app.get("/blog", (request, response)=>{
   const firstTitle= firstBlog.title;
   const firstContent=firstBlog.content;
@@ -184,7 +189,7 @@ app.post("/contact", (request, response)=> {
     }
     const userInfo = JSON.stringify(userData);
     const url="https://us21.api.mailchimp.com/3.0/lists/82ab7d2590";
-    const contactKey = keyking.keystore.mailchimp;
+    const contactKey = keyking.keystore.mailchimp || process.env.API_KEY;
     console.log(contactKey);
     const options = {
         method : "POST",

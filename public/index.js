@@ -1,5 +1,5 @@
 //Home Page
-var words = ["Data Scientist", "AI Specialist", "A & A Engineer"],
+var words = ["Data Scientist", "ML Engineer", "A & A Engineer"],
 part,
 i = 0,
 offset = 0,

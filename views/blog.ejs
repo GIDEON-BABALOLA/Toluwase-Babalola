@@ -21,46 +21,8 @@
     </div>
   </div>
   <div class="row mb-2">
-    <div class="col-md-6">
-      <h5 style="text-align:center;font-family: 'Clash Display', sans-serif;" class="price"
-      style="color: white;"><%= dataman %> </h5>
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-      style="background-color:  #1d1d1d; color: white;">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2" name="first">Computer Vision</strong>
-          <h6 class="mb-0" style="font-family:  'Clash Display', sans-serif;">
-            AI Basketball Referee System with Computer Vision
-          </h6>
-          <div class="mb-1 " style="color:#8f8f8f">July 2023</div>
-          <p class="card-text mb-auto">
-            Just concluded an interesting 1-hour session with Ayush Pai, Matt Brown and Akmal Chaudhri, Esq. on 𝐚𝐧 𝐀𝐈 𝐁𝐚𝐬𝐤𝐞𝐭𝐛𝐚𝐥𝐥 𝐑𝐞𝐟𝐞𝐫𝐞𝐞 𝐒𝐲𝐬𝐭𝐞𝐦 𝐰𝐢𝐭𝐡 𝐂𝐨𝐦𝐩𝐮𝐭𝐞𝐫 𝐕𝐢𝐬𝐢𝐨𝐧. The SingleStore DB was used as the database platform.Read More
-          </p>
-          <a href="/latest/<%= first %>" class="stretched-link" style="color: #8f8f8f;">Continue reading</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img src = "/images/AI Baskethball Referee System with Computer vision.png"class="bd-placeholder-img" width="250" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill=""/></img>
-        </div>
-      </div>
-    </div>
     
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style="background-color: #1d1d1d;
-      color: white;">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-white" name="second">Artificial Intelligence</strong>
-          <h5 class="mb-0" style="font-family:  'Clash Display', sans-serif;;">Improving the estimated stock level percentage!</h5>
-          <div class="mb-1 " style="color:#8f8f8f;">June 2023</div>
-          <p class="mb-auto">
-            By leveraging customer data related to products, sales, payment methods, and memberships, businesses can make data-driven decisions to optimize their stock levels.Read More...
-          </p>
-          <a href="/latest/<%= third %>" class="stretched-link" style="color: #8f8f8f;">Continue reading</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img  src="/images/Improving the estimated stock level percentage!.png"class="bd-placeholder-img" width="250" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>
-        </div>
-      </div>
-    </div>
-  </div>
+    
  
   
  
@@ -74,109 +36,126 @@
           style="margin-left: 100%;" onclick="player()">Compose</button>
         </form>
       </div>
-      <article class="">
-          <% content.forEach(function(element, index){ %>
-            <div class="blog-post">
-        <h2 class="blog-post-title mb-1 format"><%= element.userTitle %></h2>
-                <p class="blog-post-meta"><%= element.userDate %> by <span href="#"  style="color: #8f8f8f;"> <%= element.userName%>
-                </span></p><p> <span class="contained"><%= element.userContent  %> 
-                     </span>
-                     <a href="/posts/<%= element._id %>" style="color: #8f8f8f;"><%= element.sender %> </a>  
-                     </p>
-            
-                    <hr>
-                    <div class="share-container">
-                      
-                      <button class="share-link got" onclick="golang(this)" data-id="<%= element._id %>">
-                        <i class="fa-regular fa-share-from-square share-group">
-                      </i></button>
-                      <div class="share-options" id="<%= element._id %>">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=<%=domane%><%= element._id %>" target="_blank">
-                          <i class="fab fa-facebook-square fa-lg"><span style="font-size: 0.8rem;"></span></i></a>
-                        <a href="https://telegram.me/share/url?url=<%=domane%><%= element._id %>"  target="_blank">
-                          <i class="fa-brands fa-telegram fab fa-lg"></i>
-                        </a>
-                        <a href="https://api.whatsapp.com/send?text=<%=domane%><%= element._id %>" target="_blank">
-                          <i class="fab fa-whatsapp fa-lg"></i></a>
-                      </div>
-                    </div>
-                    </div>
-                    
-      <% }) %>
-      </article>
-      <article class="blog-post">
-        <h2 class="blog-post-title mb-1" style="font-family:  'Clash Display', sans-serif;"><%= firstT%></h2>
-        <p class="blog-post-meta">July 13, 2023 by <span href="#"  style="color: #8f8f8f;">Toluwase-Babalola</span></p>
 
-        <p class="contained"> <%=firstC %>
-      </p><span class="">
-<div class="share-container">
-  <button class="share-link" onclick="toggleShareOptions1()"><i class="fa-regular fa-share-from-square share-group">
-  </i></button>
-  <div class="share-options" id="shareOptions1">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=<%=doman%><%= first %>" target="_blank">
-      <i class="fab fa-facebook-square fa-lg"><span style="font-size: 0.8rem;"></span></i></a>
-    <a href="https://telegram.me/share/url?url=<%=doman%><%=first%>"  target="_blank">
-      <i class="fa-brands fa-telegram fab fa-lg"></i>
-    </a>
-    <a href="https://api.whatsapp.com/send?text=<%=doman%><%=first %>" target="_blank">
-      <i class="fab fa-whatsapp fa-lg"></i></a>
-  </div>
-</div>
-    </span>
-      <span><a href="/latest/<%= first %>" style="color: #8f8f8f;"  target="_blank">Read more</a>
-      </span>
-        <hr>
-    
-      </article>
+  <article class="art">
+    <% content.forEach(function(element, index){ %>
+    <div class="row art">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <img src = "<%= element.picture %>" width="100%">
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <h2 class="blog-post-title mb-1" style="font-family:  'Clash Display', sans-serif;"><%= element.userTitle %></h2>
+        <p class="blog-post-meta"><%= element.userDate %> by <span href="#"  style="color: #8f8f8f;"><%= element.userName%></span></p>
+        <a href="/posts/<%= element._id %>" style="color: #8f8f8f;">Read more </a>  
+          <div class="share-container">
+             
+            <button class="share-link got" onclick="golang(this)" data-id="<%= element._id %>">
+              <i class="fa-regular fa-share-from-square share-group">
+            </i></button>
+            <div class="share-options" id="<%= element._id %>">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=<%=domane%><%= element._id %>" target="_blank">
+                <i class="fab fa-facebook-square fa-lg"><span style="font-size: 0.8rem;"></span></i></a>
+              <a href="https://telegram.me/share/url?url=<%=domane%><%= element._id %>"  target="_blank">
+                <i class="fa-brands fa-telegram fab fa-lg"></i>
+              </a>
+              <a href="https://api.whatsapp.com/send?text=<%=domane%><%= element._id %>" target="_blank">
+                <i class="fab fa-whatsapp fa-lg"></i></a>
+            </div>
+          </div>
+      </div>
 
-      <article class="blog-post">
-        <h2 class="blog-post-title mb-1"><%= secondT%></h2>
-        <p class="blog-post-meta">July 5, 2023 by <span href="#" style="color: #8f8f8f;">Toluwase-Babalola</span></p>
-<p class="contained"><%= secondC%> </p>
-<div class="share-container">
-  <button class="share-link" onclick="toggleShareOptions2()"><i class="fa-regular fa-share-from-square share-group">
-  </i></button>
-  <div class="share-options" id="shareOptions2">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=<%=doman%><%= second %>" target="_blank">
-      <i class="fab fa-facebook-square fa-lg"><span style="font-size: 0.8rem;"></span></i></a>
-    <a href="https://telegram.me/share/url?url=<%=doman%><%=second%>"  target="_blank">
-      <i class="fa-brands fa-telegram fab fa-lg"></i>
-    </a>
-    <a href="https://api.whatsapp.com/send?text=<%=doman%><%= second %>" target="_blank">
-      <i class="fab fa-whatsapp fa-lg"></i></a>
-  </div>
-</div>
-</span>
-<span><a href="/latest/<%= second %>" style="color: #8f8f8f;"  target="_blank">Read more</a>
-</span>
-<hr>
-      </article>
-
-      <article class="blog-post">
-        <h2 class="blog-post-title mb-1"><%= thirdT%></h2>
-        <p class="blog-post-meta">December 14, 2020 by <span href="#"  style="color: #8f8f8f;">Toluwase-Babalola</a></span>
-<p class="contained"><%= thirdC %>  </p>
-<span class="">
-  <div class="share-container">
-    <button class="share-link" onclick="toggleShareOptions3()"><i class="fa-regular fa-share-from-square share-group">
-    </i></button>
-    <div class="share-options" id="shareOptions3">
-      <a href="https://www.facebook.com/sharer/sharer.php?u=<%=doman%><%= third %>" target="_blank">
-        <i class="fab fa-facebook-square fa-lg"><span style="font-size: 0.8rem;"></span></i></a>
-      <a href="https://telegram.me/share/url?url=<%=doman%><%=third%>"  target="_blank">
-        <i class="fa-brands fa-telegram fab fa-lg"></i>
-      </a>
-      <a href="https://api.whatsapp.com/send?text=<%=doman%><%= third %>" target="_blank">
-        <i class="fab fa-whatsapp fa-lg" ></i></a>
     </div>
-  </div>
-</span>
-<span><a href="/latest/<%= third %>" style="color: #8f8f8f;" target="_blank">Read more</a>
-</span>
-<hr>
+    <% }) %>
+  </article>
+    </article>
+      <article class="art">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <img src = "/images/AI Baskethball Referee System with Computer vision.png" width="100%">
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <h2 class="blog-post-title mb-1" style="font-family:  'Clash Display', sans-serif;"><%= firstT%></h2>
+            <p class="blog-post-meta">July 13, 2023 by <span href="#"  style="color: #8f8f8f;">Toluwase-Babalola</span></p>
+            <span><a href="/latest/<%= first %>" style="color: #8f8f8f;"  target="_blank">Read more</a>
+              <div class="share-container">
+                <button class="share-link" onclick="toggleShareOptions1()"><i class="fa-regular fa-share-from-square share-group">
+                </i></button>
+                <div class="share-options" id="shareOptions1">
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=<%=doman%><%= first %>" target="_blank">
+                    <i class="fab fa-facebook-square fa-lg"><span style="font-size: 0.8rem;"></span></i></a>
+                  <a href="https://telegram.me/share/url?url=<%=doman%><%=first%>"  target="_blank">
+                    <i class="fa-brands fa-telegram fab fa-lg"></i>
+                  </a>
+                  <a href="https://api.whatsapp.com/send?text=<%=doman%><%=first %>" target="_blank">
+                    <i class="fab fa-whatsapp fa-lg"></i></a>
+                </div>
+              </div>
+          </div>
+
+        </div>
       </article>
+      <article class="art">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <img src = "/images/port.png" width="100%">
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <h2 class="blog-post-title mb-1" style="font-family:  'Clash Display', sans-serif;"><%= secondT%></h2>
+            <p class="blog-post-meta">July 13, 2023 by <span href="#"  style="color: #8f8f8f;">Toluwase-Babalola</span></p>
+            <a href="/latest/<%= second %>" style="color: #8f8f8f;"  target="_blank">Read more</a>
+            <div class="share-container">
+              <button class="share-link" onclick="toggleShareOptions2()"><i class="fa-regular fa-share-from-square share-group">
+              </i></button>
+              <div class="share-options" id="shareOptions2">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=<%=doman%><%= second %>" target="_blank">
+                  <i class="fab fa-facebook-square fa-lg"><span style="font-size: 0.8rem;"></span></i></a>
+                <a href="https://telegram.me/share/url?url=<%=doman%><%=second%>"  target="_blank">
+                  <i class="fa-brands fa-telegram fab fa-lg"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?text=<%=doman%><%= second %>" target="_blank">
+                  <i class="fab fa-whatsapp fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </article>
+      <article class="art">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <img src = "/images/Improving the estimated stock level percentage!.png" width="100%">
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <h2 class="blog-post-title mb-1" style="font-family:  'Clash Display', sans-serif;"><%= thirdT%></h2>
+            <p class="blog-post-meta">July 13, 2023 by <span href="#"  style="color: #8f8f8f;">Toluwase-Babalola</span></p>
+            <span><a href="/latest/<%= third %>" style="color: #8f8f8f;" target="_blank">Read more</a>
+            <div class="share-container">
+              <button class="share-link" onclick="toggleShareOptions3()"><i class="fa-regular fa-share-from-square share-group">
+              </i></button>
+              <div class="share-options" id="shareOptions3">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=<%=doman%><%= third %>" target="_blank">
+                  <i class="fab fa-facebook-square fa-lg"><span style="font-size: 0.8rem;"></span></i></a>
+                <a href="https://telegram.me/share/url?url=<%=doman%><%=third%>"  target="_blank">
+                  <i class="fa-brands fa-telegram fab fa-lg"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?text=<%=doman%><%= third %>" target="_blank">
+                  <i class="fab fa-whatsapp fa-lg" ></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </article>
+ 
+       
     </div>
+
+
+
+
+
+
+
 
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
