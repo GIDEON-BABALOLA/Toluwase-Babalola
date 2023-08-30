@@ -537,7 +537,7 @@ article{
 }
 .botman{
     background-color: black;
-    border: 2px solid white;
+    border: 2px solid  #8f8f8f;
 }
 .botmane{
     border: 2px solid black;
@@ -585,7 +585,9 @@ cursor: pointer;
     background-color: black;
     color: white;
   }
-  
+  .deved{
+    display: none;
+  }
   .image-file {
     opacity: 0;
     position: absolute;
@@ -607,6 +609,9 @@ cursor: pointer;
     position: relative;
     bottom: 20px;
 
+  }
+  .lost{
+    display: none;
   }
   .featurette{
     margin-top: 5%;
@@ -677,6 +682,9 @@ cursor: pointer;
   .pal{
     font-family:  'Clash Display', sans-serif;;
   }
+  .devader{
+    display: block;
+  }
 
 @keyframes shake{
     from{transform: translateX(-50px);}
@@ -701,6 +709,9 @@ cursor: pointer;
     .box{
         display: none;
     }
+    .deved{
+        display: none;
+      }
     .downloadcv{
         display: none;
     }
@@ -719,6 +730,9 @@ cursor: pointer;
     .mag{
         display: none;
     }
+    .deved{
+        display: none;
+      }
     .tolu-format{
         width: 100%;
     }
@@ -781,6 +795,9 @@ cursor: pointer;
     .first-image{
         display: none;
     }
+    .phone-why{
+        margin-top: 2%;
+    }
     .headword{
         display: none;
     }
@@ -790,6 +807,12 @@ cursor: pointer;
     .downloadcv{
         display: none;
     }
+    .deved{
+        display: inline;
+      }
+      .devad{
+        display: none;
+      }
     .updated{
         padding: 0% 10%; 
     }
@@ -866,8 +889,11 @@ cursor: pointer;
     .fila{
         margin-top: 2%;
     }
+    .lost{
+        display: inline;
+    }
     .phoneEdit{
-        padding-top: 5%;
+        padding-top: 9%;
     }
     .ajax{
         margin: 0% 2%;

@@ -17,8 +17,13 @@ app.set('view engine', 'ejs');
 const url = process.env.URL;
 mongoose.connect(url, {
   useNewUrlParser: true,
-  useUnifiedTopology:true }
-  )
+  useUnifiedTopology:true,
+  ssl: true, }
+  ).then(()=>{
+    console.log("connection successful")
+  }).catch((error)=>{
+    console.log("connection-unsuccessful", error)
+  })
   const blogSchema = new mongoose.Schema({
     userName : String,
     userTitle : String,
@@ -80,7 +85,7 @@ app.get("/blog", (request, response)=>{
   console.log(currentURL)
   blogModel.find().sort({ timestamp: -1 })
   .then((data)=>{
-    // console.log(data)
+    console.log(data)
     response.render("blog",  {dataman:date.universalDate(), firstT: firstTitle, firstC: firstContent, secondT: secondTitle,
       secondC:secondContent, thirdT: thirdTitle, thirdC : thirdContent, content : data, doman : urlWithLatest, domane :urlWithLatestP
       ,  first: loadman1, second : loadman2, third:  loadman3});
@@ -215,6 +220,6 @@ app.post("/contact", (request, response)=> {
 app.use( function(request, response, next){
     response.status(404).render("error", {dat:date.universalDate() });
   })
-app.listen(5000, function(){
+app.listen(5000 || process.env.PORT, function(){
     console.log("server is running on port 5000");
 });
