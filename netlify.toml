@@ -1,5 +1,5 @@
 [build]
-  command = "npm start"
+  command = "npm install && npm run build"
   publish = "."  
   base = ""
 
