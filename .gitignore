@@ -2,3 +2,5 @@ node_modules
 API Keys.js
 junk.js
 .env
+# Local Netlify folder
+.netlify
