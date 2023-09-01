@@ -1,0 +1,65 @@
+<section>
+    <nav class="navbar navbar-expand-md mynav fixed-top" id="myNavbar" style="padding: 2.5% 0%;">
+        <div class="container-fluid">
+          <div class="iphone-12-fix">
+          <a class="navbar-brand" href="#">ThBabs</a>
+          <button class="navbar-toggler ball" type="button" data-bs-toggle="offcanvas" style="margin-left: 100%;"
+           data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon ball"></span>
+          </button>   
+          </div>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarNav">
+            <ul class="navbar-nav ms-auto powergrid offcanvas-body" >
+              <span class="close-icon ball d-md-none" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="fa-solid fa-x" style="color: black;"></i>
+               </span>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">HOME</a>
+              </li><hr>
+              <li class="nav-item">
+                <a class="nav-link" href="/projects">PROJECTS</a>
+              </li><hr>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">CONTACT</a>
+              </li><hr>
+              <li class="nav-item">
+                <a class="nav-link" href="/blog">BLOG</a>
+              </li><hr>
+              <li class="nav-item">
+                <a class="nav-link" href="/resume">RESUME</a>
+              </li>
+              <li class="nav-item">
+                <a href="/Toluwase Babalola CV.pdf" download="Toluwase Babalola CV.pdf" class="nav-link palace">
+                  <button class="btn-dark botmane btn" style="margin-left: 6%; margin-top: 2%; background-color: white; border-radius: 2px solid black;
+                   color: black;" id="downloadButton">
+                   Download CV</button>
+                   </a>
+              </li><li>       
+                <div class="headword" style="margin-top: 20%;">  <br>
+                   <a href="https://twitter.com/thBabs" target="_blank" class="ajax"><i class="fa-brands fa-x-twitter fa-sm headfa"
+                 ></i></a> 
+              <a href=" http://github.com/xbabs" target="_blank" class="ajax"><i class="fa-brands fa-github fa-sm headfa"></i> </a>
+              <a href="https://www.linkedin.com/in/toluwasebabalola" target="_blank" class="ajax"><i class="fa-brands fa-linkedin fa-sm headfa"></i></a>
+               <a href="mailto:toluwasebabalola44@gmail.com" target="_blank" class="ajax"><i class="fa-solid fa-envelope fa-sm headfa"></i></a>
+      
+               </div>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      </section>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(window).scroll(function() {
+          if ($(this).scrollTop() > 50) { // Adjust the scroll threshold as needed
+            $('#myNavbar').addClass('scrolled');
+          } else {
+            $('#myNavbar').removeClass('scrolled');
+          }
+        });
+      });
+    </script>
+    
+    

@@ -613,6 +613,9 @@ cursor: pointer;
   .lost{
     display: none;
   }
+  .lap{
+    padding: 0.5% 5%;
+  }
   .featurette{
     margin-top: 5%;
     margin-bottom: 5%;
@@ -894,6 +897,7 @@ cursor: pointer;
     }
     .phoneEdit{
         padding-top: 9%;
+        
     }
     .ajax{
         margin: 0% 2%;

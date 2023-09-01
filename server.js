@@ -1,7 +1,6 @@
 require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
-const keyking = require(__dirname + "/API Keys.js")
 const https = require("https")
 const date = require(__dirname + "/date.js");
 const _ = require("lodash");
