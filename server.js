@@ -14,7 +14,7 @@ const path = require("path");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
-const url = process.env.URL;
+const url = process.env.URK;
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology:true,
