@@ -193,7 +193,7 @@ app.post("/contact", (request, response)=> {
     }
     const userInfo = JSON.stringify(userData);
     const url="https://us21.api.mailchimp.com/3.0/lists/82ab7d2590";
-    const contactKey = keyking.keystore.mailchimp || process.env.API_KEY;
+    const contactKey = process.env.API_KEY;
     console.log(contactKey);
     const options = {
         method : "POST",
