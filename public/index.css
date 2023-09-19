@@ -7,7 +7,9 @@
     padding: 0% 10%; 
     padding-right: 0%;
 }
-
+.menuman{
+    color: black;
+}
 .share-container {
     position: relative;
     display: inline-block;
@@ -151,7 +153,11 @@ padding: 4% 1%;
     padding-bottom: 0%;
    margin-right: 25%;
 }
-
+button.navbar-toggler.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
 .inpot:checked+p {
     text-decoration: line-through;
     text-decoration-color: #050a52;
@@ -228,8 +234,13 @@ nav{
   .boxboy{
     box-shadow: 5px 0 10px 0 #ccc;
   }
+  #menuman{
+    font-size: 2rem;color: white;
+  }
+
   #myNavbar.scrolled .navbar-brand,
-  #myNavbar.scrolled .nav-link {
+  #myNavbar.scrolled .nav-link,
+  #myNavbar.scrolled #menuman {
     color: black;
   }
 .navbar-brand{
@@ -382,10 +393,6 @@ a{
     letter-spacing: 0px;
     font-family: " Roboto Mono", monospace;
     font-family: 'Clash Display', sans-serif;
-}
-.ball{
-    color: white;
-    background-color: white;
 }
 .borderman:hover{
 color: white;
